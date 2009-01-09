@@ -50,12 +50,7 @@
             } catch(err) {}
         </script>
 
-        <div>
-            <!-- W3C, Valid XHTML 1.0 -->
-            <a href="http://validator.w3.org/check?uri=referer">
-                <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
-            </a><br />
-
+        <div id="content">
             <!-- AddThis -->
             <script type="text/javascript">
                 addthis_pub             = 'lhunath'; 
@@ -63,25 +58,32 @@
                 addthis_logo_background = 'EFEFFF';
                 addthis_logo_color      = '666699';
                 addthis_brand           = 'Gorillas';
-                addthis_options         = 'favorites, email, digg, delicious, myspace, facebook, google, live, more';
+                addthis_options         = 'email, twitter, stumbleupon, digg, delicious, facebook, slashdot, more';
             </script>
             <a href="http://www.addthis.com/bookmark.php"
                 onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')"
                 onclick="return addthis_sendto()"
                 onmouseout="addthis_close()">
-                <img src="http://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" border="0" alt="Share" />
+                <img src="images/sm-share-en.gif" alt="Share" />
             </a><br />
             <script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
 
-            <!-- Creative Commons License -->
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" class="float right">
-                <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" />
+            <!-- W3C, Valid XHTML 1.0 -->
+            <a href="http://validator.w3.org/check?uri=referer">
+                <img src="images/valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" />
             </a><br />
+
+            <!-- Creative Commons License -->
+            <a href="http://creativecommons.org/licenses/GPL/2.0/" class="float right">
+                <img alt="CC-GNU GPL" src="http://creativecommons.org/images/public/cc-GPL-a.png" />
+            </a><br />
+
+            <!-- Image Preloading -->
             <img src="images/back_hover trac_hover.png" class="preload" alt="Preload image of Trac logo." />
         </div>
 
         <p id="footer">
-            <b xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Gorillas</b> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://gorillas.lyndir.com" property="cc:attributionName" rel="cc:attributionURL">Maarten Billemont</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</a>.
+            <b xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Gorillas</b> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://gorillas.lyndir.com" property="cc:attributionName" rel="cc:attributionURL">Maarten Billemont</a> is licensed under the <a href="http://creativecommons.org/licenses/GPL/2.0/">CC-GNU GPL</a> version 2.0.
         </p>
     </body>
 </html>
