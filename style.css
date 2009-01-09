@@ -1,0 +1,122 @@
+body {
+    margin:             0;
+    padding:            0;
+
+    color:              #2D3F80;
+    background:         white url("images/back_top.png") repeat-x;
+
+    text-align:         center;
+    font-family:        sans-serif;
+}
+img, a, a:hover {
+    border:             none;
+    color:              inherit;
+    text-decoration:    none;
+}
+a:hover {
+    color:              #5F6CA0;
+}
+h1 {
+    margin:             0;
+    padding:            1em;
+    color:              #5F6CA0;
+}
+.preload {
+    width:              0;
+    height:             1px;
+}
+.float {
+    position:           fixed;
+    bottom:             0;
+    left:               0;
+    width:              100%;
+}
+.float.right {
+    left:               auto;
+    right:              0;
+    width:              auto;
+    margin:             1ex;
+}
+#footer {
+    font-size:          8pt;
+
+    border-top:         1px solid #5F6CA0;
+    padding:            1em 1em 1ex;
+    margin:             0;
+}
+
+#back .title {
+    float:              left;
+
+    width:              479px;
+    height:             120px;
+
+    background:         url("images/back_title.png") no-repeat;
+
+    padding:            110px 0 0;
+}
+#back>.title {
+    height:             0;
+}
+#back .track {
+    float:              right;
+
+    width:              300px;
+    height:             120px;
+
+    background:         url("images/back_trac.png") no-repeat;
+}
+    #back .track:hover {
+        background:     url("images/back_trac_hover.png");
+    }
+#back .bottom {
+    clear:              both;
+
+    width:              100%;
+    height:             250px;
+    margin-bottom:      -80px;
+
+    background:         url("images/back_bottom.png") repeat-x;
+}
+
+#preview {
+    position:           relative;
+
+    width:              720px;
+    height:             515px;
+    margin:             0 auto;
+
+    background:         url("images/gorillas_phone.png") top center no-repeat;
+}
+#preview .tip {
+    position:           absolute;
+    display:            none;
+
+    top:                60px;
+    left:               50%;
+    width:              400px;
+    margin-left:        -200px;
+    padding:            0.5ex;
+
+    background:         #2D3F80;
+    border:             1px solid #5F6CA0;
+    color:              #C1C7DB;
+
+    font-size:          smaller;
+}
+    #preview:hover .tip {
+        display:        block;
+    }
+#preview object {
+    display:            none;
+    position:           relative;
+
+    width:              482px;
+    height:             322px;
+    left:               50%;
+    margin-left:        -241px;
+    top:                32px;
+
+    border:             none;
+    background:         black;
+}
