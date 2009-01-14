@@ -1,0 +1,51 @@
+#!/bin/bash
+
+mencoderFlv() {
+    mencoder "$1" -o "${1%.*}.flv" \
+        -forceidx \
+        -of lavf \
+        -oac mp3lame -lameopts abr:br=56 -srate 11025 \
+        -ovc lavc -lavcopts vcodec=flv:vqmin=3:lmin=3.0:vbitrate=1024:mbd=1:vb_strategy=2:brd_scale=1:mv0:mv0_threshold=0:trell:v4mv:cbp:last_pred=3
+}
+
+mencoderH264o() {
+    mencoder "$1" -o "${1%.*}.mpg" \
+        -vf bmovl=0:0:mylogo.fifo,harddup \
+        -oac faac -faacopts br=56:mpeg=4:object=2 \
+        -ovc x264 -x264encopts bitrate=300:threads=auto:subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid:weight_b \
+        -srate 44100 -ofps 24000/1001
+}
+
+mencoderH264() {
+    mencoder "$1" -o "${1%.*}.mp4" \
+        -forceidx \
+        -of lavf -lavfopts format=mp4 \
+        -oac faac -faacopts br=56:mpeg=4:object=2 \
+        -ovc x264 -x264encopts bitrate=512:threads=auto:subq=7:partitions=all:8x8dct:me=umh:frameref=5:trellis=1:bframes=3:b_pyramid:weight_b
+        #-srate 44100 -ofps 24000/1001
+        #-oac mp3lame -lameopts abr:br=56 -srate 11025 \
+}
+
+mencoderH264 "$@"
+
+exit
+
+options="-vcodec libx264 -b 512k -flags +loop+mv4 -cmp 256 \
+       -partitions +parti4x4+parti8x8+partp4x4+partp8x8+partb8x8 \
+       -me_method hex -subq 7 -trellis 1 -refs 5 -bf 3 \
+       -flags2 +bpyramid+wpred+mixed_refs+dct8x8 -coder 1 -me_range 16 \
+           -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -qmin 10\
+       -qmax 51 -qdiff 4"
+options="-vcodec libx264 -b 512k -flags +loop+mv4 -cmp 256 \
+       -partitions +parti4x4+parti8x8+partp4x4+partp8x8+partb8x8 \
+       -me_method hex -subq 7 -trellis 1 -refs 5 -bf 0 \
+       -flags2 +mixed_refs -coder 0 -me_range 16 \
+           -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -qmin 10\
+       -qmax 51 -qdiff 4"
+
+ffmpeg -y -i "$1" -an -pass 1 -threads 2 $options "${1%.*}.mpg"
+
+ffmpeg -y -i "$1" -acodec libfaac -ar 44100 -ab 96k -pass 2 -threads 2 $options "${1%.*}.mpg"
+
+
+

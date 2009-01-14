@@ -1,0 +1,7 @@
+#preview object {
+    display:            none;
+    visibility:         hidden;
+}
+#preview a, #preview .tip {
+    display:            block;
+}
