@@ -2,6 +2,6 @@
     display:            none;
     visibility:         hidden;
 }
-#preview a, #preview .tip {
+.iphone, #preview .tip {
     display:            block;
 }

@@ -11,7 +11,7 @@ body {
 img, a, a:hover {
     border:             none;
 
-    color:              inherit;
+    color:              white;
     text-decoration:    none;
 }
 #content img {
@@ -62,6 +62,7 @@ h1 {
     height:             120px;
 
     background:         url("images/back_title.png") no-repeat;
+    color:              inherit;
 
     padding:            110px 0 0;
 }
@@ -130,7 +131,7 @@ h1 {
     border:             none;
     background:         black;
 }
-#preview a {
+.iphone {
     display:            none;
 
     position:           absolute;
@@ -141,6 +142,17 @@ h1 {
     height:             100%;
 }
 
+.text {
+    width:              36%;
+    margin:             auto;
+    padding:            1em;
+
+    background:         #C1C7DB;
+    border:             1px solid #9D9D9D;
+
+    text-align:         left;
+    font-size:          smaller;
+}
 img.screenshot {
     background:         #C1C7DB;
 }

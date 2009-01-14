@@ -41,13 +41,14 @@
         </div> 
             
         <div id="preview">
-            <div class="tip">Click for a short gameplay video.</div>
+            <div class="tip">Click for a short gameplay video.<br />
+                (or <a href="gorillas.mp4">download</a> / <a href="http://www.youtube.com/watch?v=Hu4Y8eJLqkI">YouTube</a>)</div>
             <object type="application/x-shockwave-flash" data=".jquery/shadowbox-2.0/flvplayer.swf">
                 <param name="movie" value=".jquery/shadowbox-2.0/flvplayer.swf" />
                 <param name="allowfullscreen" value="true" />
                 <param name="flashvars" value="file=http://gorillas.lyndir.com/gorillas.flv&amp;width=482&amp;height=322&amp;autostart=true&amp;displayheight=322&amp;showicons=false&amp;backcolor=0x000000&amp;frontcolor=0xCCCCCC&amp;lightcolor=0x557722" />
             </object>
-            <a href="http://www.youtube.com/watch?v=Hu4Y8eJLqkI" onclick="return pageTracker._trackEvent('Movies', 'Start', 'gorillas.youtube', 1);"></a>
+            <a class="iphone" href="http://www.youtube.com/watch?v=Hu4Y8eJLqkI" onclick="return pageTracker._trackEvent('Movies', 'Start', 'gorillas.youtube', 1);"></a>
         </div>
 
         <script type="text/javascript">
@@ -82,6 +83,26 @@
                 </a>
                 <script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
             </p>
+
+            <div class="text">
+                <p><b>Gorillas</b><br />
+                    by <a href="http://lhunath.lyndir.com">Lhunath</a></p>
+                <p><i>Gorillas</i> is a turn based single player and multiplayer game where the objective is to blast your opponent away using carefully aimed bananas.</p>
+
+                <p>With a single touch of the display you determine the direction and speed of your banana's throw.  Don't forget to take the wind into account!</p>
+
+
+                <p><b>FEATURES:</b>
+                <ul>
+                    <li>Classic retro look</li>
+                    <li>Eye candy worthy of your iPhone / iPod touch</li>
+                    <li> Wind and weather effects, such as rain and snow</li>
+                    <li> Challenge the AI or a friend</li>
+                    <li> Dynamically adjusted difficulty</li>
+                    <li> Several different cities / worlds</li>
+                    <li> Fully Open Source (GPLv2)</li>
+                </ul></p>
+            </div>
 
             <p>
                 <img class="screenshot" src="images/Screenshot 2009.01.13 21.43.25.png" />
