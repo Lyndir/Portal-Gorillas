@@ -42,7 +42,7 @@
             
         <div id="preview">
             <div class="tip">Click for a short gameplay video.<br />
-                (or <a href="gorillas.mp4">download</a> / <a href="http://www.youtube.com/watch?v=Hu4Y8eJLqkI">YouTube</a>)</div>
+                <span class="small">(or <a href="http://www.youtube.com/watch?v=Hu4Y8eJLqkI">YouTube</a> / <a href="gorillas.mp4">MPEG-4</a>)</span></div>
             <object type="application/x-shockwave-flash" data=".jquery/shadowbox-2.0/flvplayer.swf">
                 <param name="movie" value=".jquery/shadowbox-2.0/flvplayer.swf" />
                 <param name="allowfullscreen" value="true" />

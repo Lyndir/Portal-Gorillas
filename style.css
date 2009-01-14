@@ -35,6 +35,9 @@ h1 {
     width:              0;
     height:             1px;
 }
+.small {
+    font-size:          smaller;
+}
 .float {
     position:           fixed;
     bottom:             0;
