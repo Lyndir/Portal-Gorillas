@@ -4,11 +4,21 @@
     <head>
         <title>Gorillas - The iPhone Game</title>
         <meta name="verify-v1" content="IluFmv0cMN6OlW/zGTTUB9T7yXMyqW2PiEA5scdp274=" />
-        <link rel="icon" href="favicon.png" type="image/png" />
-        <link rel="shortcut icon" href="favicon.png" type="image/png" />
+        <link rel="icon" href="favicon.png" type="image/x-png" />
+        <link rel="shortcut icon" href="favicon.png" type="image/x-png" />
         <link rel="stylesheet" type="text/css" href="style.css" />
         <!--[if !IE]>-->
-            <link type="text/css" media="only screen and (max-device-width: 480px)" href="style-iphone.css" rel="stylesheet" />
+            <style type="text/css">
+                @media only screen and (max-device-width: 480px) {
+                    #preview object, #preview .tip .small {
+                        display:            none;
+                        visibility:         hidden;
+                    }
+                    .iphone, #preview .tip {
+                        display:            block;
+                    }
+                }
+            </style>
         <!--<![endif]-->
         <!--[if lt IE 8]>
             <script type="text/javascript">
@@ -36,13 +46,14 @@
     <body>
         <div id="back">
             <a class="track" href="/trac"></a>
-            <a class="title" href="/">In the App Store, soon!</a>
+            <a class="title" href="/">Status: Under review by Apple!</a>
             <div class="bottom"></div>
         </div> 
             
         <div id="preview">
             <div class="tip">Click for a short gameplay video.<br />
-                <span class="small">(or <a href="http://www.youtube.com/watch?v=Hu4Y8eJLqkI">YouTube</a> / <a href="gorillas.mp4">MPEG-4</a>)</span></div>
+                <span class="small">(or <a href="http://www.youtube.com/watch?v=Hu4Y8eJLqkI">YouTube</a>
+                                      / <a href="gorillas.mp4">MPEG-4</a>)</span></div>
             <object type="application/x-shockwave-flash" data=".jquery/shadowbox-2.0/flvplayer.swf">
                 <param name="movie" value=".jquery/shadowbox-2.0/flvplayer.swf" />
                 <param name="allowfullscreen" value="true" />
@@ -86,7 +97,7 @@
 
             <div class="text">
                 <p><b>Gorillas</b><br />
-                    by <a href="http://lhunath.lyndir.com">Lhunath</a></p>
+                    by <a class="b" href="http://lhunath.lyndir.com">Lhunath</a></p>
                 <p><i>Gorillas</i> is a turn based single player and multiplayer game where the objective is to blast your opponent away using carefully aimed bananas.</p>
 
                 <p>With a single touch of the display you determine the direction and speed of your banana's throw.  Don't forget to take the wind into account!</p>
@@ -128,7 +139,7 @@
         </div>
 
         <p id="footer">
-            <b xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Gorillas</b> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://gorillas.lyndir.com" property="cc:attributionName" rel="cc:attributionURL">Maarten Billemont</a> is licensed under the <a href="http://creativecommons.org/licenses/GPL/2.0/">CC-GNU GPL</a> version 2.0.
+            <b xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Gorillas</b> by <a class="b" xmlns:cc="http://creativecommons.org/ns#" href="http://gorillas.lyndir.com" property="cc:attributionName" rel="cc:attributionURL">Maarten Billemont</a> is licensed under the <a class="b" href="http://creativecommons.org/licenses/GPL/2.0/">CC-GNU GPL</a> version 2.0.
         </p>
     </body>
 </html>
