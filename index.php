@@ -46,10 +46,10 @@
     <body>
         <div id="back">
             <a class="track" href="/trac"></a>
-            <a class="title" href="/">Status: Under review by Apple!</a>
+            <a class="title" href="/"></a>
             <div class="bottom"></div>
         </div> 
-            
+                
         <div id="preview">
             <div class="tip">Click for a short gameplay video.<br />
                 <span class="small">(or <a href="http://www.youtube.com/watch?v=Hu4Y8eJLqkI">YouTube</a>
@@ -76,8 +76,14 @@
         </script>
 
         <div id="content">
-            <!-- AddThis -->
             <p>
+                <!-- App Store -->
+                <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=302275459&mt=8">
+                    <img src="images/appstore.png" />
+                </a>
+                <br />
+
+                <!-- AddThis -->
                 <script type="text/javascript">
                     addthis_pub             = 'lhunath'; 
                     addthis_logo            = 'http://gorillas.lyndir.com/images/icon.png';
@@ -95,6 +101,7 @@
                 <script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
             </p>
 
+            <!-- Description -->
             <div class="text">
                 <p><b>Gorillas</b><br />
                     by <a class="b" href="http://lhunath.lyndir.com">Lhunath</a></p>
@@ -115,6 +122,7 @@
                 </ul></p>
             </div>
 
+            <!-- Screenshots -->
             <p>
                 <img class="screenshot" src="images/Screenshot 2009.01.13 21.43.25.png" />
                 <img class="screenshot" src="images/Screenshot 2009.01.13 21.25.33.png" />
@@ -138,6 +146,7 @@
             <img src="images/back_trac_hover.png" class="preload" alt="Preload image of Trac logo." />
         </div>
 
+        <!-- Credits -->
         <p id="footer">
             <b xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Gorillas</b> by <a class="b" xmlns:cc="http://creativecommons.org/ns#" href="http://gorillas.lyndir.com" property="cc:attributionName" rel="cc:attributionURL">Maarten Billemont</a> is licensed under the <a class="b" href="http://creativecommons.org/licenses/GPL/2.0/">CC-GNU GPL</a> version 2.0.
         </p>
