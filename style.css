@@ -169,7 +169,9 @@ h1 {
     text-align:         left;
     font-size:          smaller;
 }
-img.screenshot {
+#screenshots img {
+    margin:             1em 0;
+
     background:         #C1C7DB;
 }
 

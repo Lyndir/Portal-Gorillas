@@ -123,11 +123,11 @@
             </div>
 
             <!-- Screenshots -->
-            <p>
-                <img class="screenshot" src="images/Screenshot 2009.01.13 21.43.25.png" />
-                <img class="screenshot" src="images/Screenshot 2009.01.13 21.25.33.png" />
-                <img class="screenshot" src="images/Screenshot 2009.01.13 21.10.41.png" />
-                <img class="screenshot" src="images/Screenshot 2009.01.13 21.12.30.png" />
+            <p id="screenshots">
+                <img src="images/2.png" />
+                <img src="images/3.png" />
+                <img src="images/4.png" />
+                <img src="images/5.png" />
             </p>
 
             <!-- W3C, Valid XHTML 1.0 -->
