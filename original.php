@@ -1,27 +1,32 @@
         <div id="content">
-            <p>
-                <!-- Flash Game -->
-                <object     id="game"
-                            classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
-                            codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
-                            height="350"
-                            width="640">
-                    <param  name="allowScriptAccess"    value="sameDomain" />
-                    <param  name="movie"                value="http://rickyroad.com/bf-analyze/miscmedia/Gorilla.swf" />
-                    <param  name="menu"                 value="false" />
-                    <param  name="quality"              value="low" />
-                    <param  name="bgcolor"              value="#000000" />
-                    <param  name="wmode"                value="transparent" />
+
+            <!-- Flash Game -->
+            <div id="game" onclick="return showGame();">
+                <div class="tip">Click to play the original GORILLA.BAS (flash).</div>
+
+                <object     type="application/x-shockwave-flash"
+                            data="http://rickyroad.com/miscmedia/Gorilla.swf">
+                    <param  name="movie" value="http://rickyroad.com/miscmedia/Gorilla.swf" />
+                    <param  name="allowfullscreen" value="true" />
                 </object>
-            </p>
+            </div>
 
             <!-- Referer -->
             <div class="text">
                 <p><b>Gorilla.Bas (Flash remake)</b><br />
-                    by <a class="b" href="http://rickyroad.com/games/gorillas">Ricky Road</a></p>
+                    by <a class="b" href="http://rickyroad.com/games/gorillas"
+                            onclick="pageTracker._trackPageview(this.href.replace(/^[a-z]+:\/\//i, '/external/'));">Ricky Road</a></p>
                 <p><i>Your mission</i> is to hit your opponent with the exploding banana by varying the angle and power of your throw,
                 taking into account wind speed, gravity, and the city skyline.</p>
 
                 <p>The wind speed is shown by a directional arrow at the bottom of the playing field, its length relative to its strength.</p>
+
+                <p>This is an identical port of GORILLA.BAS to Flash by
+                    <a class="b" href="http://rickyroad.com/games/gorillas"
+                        onclick="pageTracker._trackPageview(this.href.replace(/^[a-z]+:\/\//i, '/external/'));">Ricky Road</a>.
+                    And above all, just like <a class="b" href="?about">Gorillas</a> and the original GORILLA.BAS, it's entirely open source.<br />
+                    So go check it out!
+                </p>
             </div>
+
         </div>

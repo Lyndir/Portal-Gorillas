@@ -80,6 +80,8 @@ h1 {
     padding:            0 46px;
 
     background:         url("images/menu.png") no-repeat;
+
+    list-style:         none;
 }
 #menu[id] {
     position:           fixed;
@@ -145,17 +147,7 @@ h1 {
 
     background:         url("images/back_bottom.png") repeat-x;
 }
-
-#preview {
-    position:           relative;
-
-    width:              720px;
-    height:             515px;
-    margin:             0 auto;
-
-    background:         url("images/gorillas_phone.png") top center no-repeat;
-}
-#preview .tip {
+.tip {
     position:           absolute;
     display:            none;
 
@@ -171,19 +163,33 @@ h1 {
 
     font-size:          smaller;
 }
-    #preview:hover .tip {
+    div:hover .tip {
         display:        block;
     }
-#preview .tip a, #preview .tip a:link {
+.tip a, .tip a:link {
     color:              white;
     text-decoration:    none;
 }
-    #preview .tip a:hover {
+    .tip a:hover {
         text-decoration:underline;
     }
-
-#preview object {
+object {
     display:            none;
+    position:           relative;
+
+    border:             none;
+    background:         black;
+}
+#preview {
+    position:           relative;
+
+    width:              720px;
+    height:             515px;
+    margin:             0 auto;
+
+    background:         url("images/gorillas_phone.png") top center no-repeat;
+}
+#preview object {
     position:           relative;
 
     width:              482px;
@@ -191,9 +197,20 @@ h1 {
     left:               50%;
     margin-left:        -241px;
     top:                32px;
+}
+#game {
+    position:           relative;
 
-    border:             none;
-    background:         black;
+    width:              640px;
+    height:             350px;
+    margin:             2em auto;
+
+    background:         url("images/original.png") top center no-repeat;
+    border:             1px solid #9D9D9D;
+}
+#game object {
+    width:              640px;
+    height:             350px;
 }
 .iphone {
     display:            none;

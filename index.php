@@ -36,19 +36,38 @@
             <script type="text/javascript" src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js"></script>
         <![endif]-->
         <script type="text/javascript">
+
+            // Flash demonstrational movie.
             function showMovie() {
                 var movieElement = document.getElementById('preview').getElementsByTagName('object')[0];
 
                 if(movieElement.style.display == 'block') {
                     movieElement.style.display = 'none';
-                    pageTracker._trackEvent("Movies", "Start", "gorillas.flv", 1);
+                    pageTracker._trackPageview('/movie/gorillas.flv');
                 } else {
                     movieElement.style.display = 'block';
-                    pageTracker._trackEvent("Movies", "Stop", "gorillas.flv", 1);
                 }
 
                 return true;
             }
+
+            // Flash game: Original Gorilla.Bas
+            function showGame() {
+                var gameElement = document.getElementById('game').getElementsByTagName('object')[0];
+
+                if(gameElement.style.display == 'block') {
+                    gameElement.style.display = 'none';
+                    pageTracker._trackPageview('/game/original');
+                } else {
+                    gameElement.style.display = 'block';
+                }
+
+                return true;
+            }
+
+            // Google Analytics
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
         </script>
     </head>
 
@@ -56,13 +75,14 @@
         <div>
             <ul id="menu">
                 <li class="a<?=($target == 'about')? " active": ""?>">
-                    <a href="?about"></a></li>
+                    <a href="/?about"></a></li>
                 <li class="b">
                     <a href="/trac"></a></li>
                 <li class="c<?=($target == 'original')? " active": ""?>">
-                    <a href="?original"></a></li>
+                    <a href="/?original"></a></li>
                 <li class="d">
-                    <a href="http://lhunath.lyndir.com"></a></li>
+                    <a href="http://lhunath.lyndir.com"
+                        onclick="pageTracker._trackPageview(this.href.replace(/^[a-z]+:\/\//i, '/external/'));"></a></li>
             </ul>
         </div>
 
@@ -74,16 +94,6 @@
                 
         <? include("$target.php"); ?>
 
-        <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-        </script><script type="text/javascript">
-            try {
-                var pageTracker = _gat._getTracker("UA-90535-5");
-                pageTracker._trackPageview();
-            } catch(err) {}
-        </script>
-
         <p>
             <!-- W3C, Valid XHTML 1.0 -->
             <a href="http://validator.w3.org/check?uri=referer">
@@ -92,6 +102,14 @@
 
             <!-- Image Preloading -->
             <img src="images/back_trac_hover.png" class="preload" alt="Preload image of Trac logo." />
+
+            <!-- Track this page hit on GA -->
+            <script type="text/javascript">
+                try {
+                    var pageTracker = _gat._getTracker("UA-90535-5");
+                    pageTracker._trackPageview();
+                } catch(err) {}
+            </script>
         </p>
 
         <p id="footer">
