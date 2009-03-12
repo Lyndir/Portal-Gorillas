@@ -1,3 +1,5 @@
+        <h2>For a preview of Gorillas 1.1, <a href="?next" class="b">click here</a>.</h2>
+
         <div id="preview">
             <div class="tip">Click for a short gameplay video.<br />
                 <span class="small">(or <a href="http://www.youtube.com/watch?v=Hu4Y8eJLqkI"

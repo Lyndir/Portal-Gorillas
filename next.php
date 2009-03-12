@@ -1,14 +1,19 @@
-        <h1>Sneak Preview of 1.1b2</h1>
+        <h1>Preview of Gorillas 1.1</h1>
 
         <div id="preview">
             <div class="tip">Click for a short gameplay video.<br />
-                <span class="small">(or <a href="gorillas-1.1.mp4"
+                <span class="small">(or <a href="http://www.youtube.com/watch?v=kOd6fI2Cm7c"
+                                            onclick="pageTracker._trackPageview('/movie/youtube');">YouTube</a>
+                                      / <a href="gorillas-1.1.mp4"
                                             onclick="pageTracker._trackPageview('/movie/gorillas-1.1.mp4');">MPEG-4</a>)</span></div>
             <object type="application/x-shockwave-flash" data=".jquery/shadowbox-2.0/flvplayer.swf">
                 <param name="movie" value=".jquery/shadowbox-2.0/flvplayer.swf" />
                 <param name="allowfullscreen" value="true" />
                 <param name="flashvars" value="file=http://gorillas.lyndir.com/gorillas-1.1.flv&amp;width=482&amp;height=322&amp;autostart=true&amp;displayheight=322&amp;showicons=false&amp;backcolor=0x000000&amp;frontcolor=0xCCCCCC&amp;lightcolor=0x557722" />
             </object>
+
+            <a class="iphone" href="http://www.youtube.com/watch?v=kOd6fI2Cm7c"
+                onclick="pageTracker._trackPageview('/movie/youtube');"></a>
         </div>
 
         <script type="text/javascript">
