@@ -5,6 +5,8 @@
         $target = 'about';
     elseif(isset($_GET['original']))
         $target = 'original';
+    elseif(isset($_GET['next']))
+        $target = 'next';
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -43,9 +45,9 @@
 
                 if(movieElement.style.display == 'block') {
                     movieElement.style.display = 'none';
-                    pageTracker._trackPageview('/movie/gorillas.flv');
                 } else {
                     movieElement.style.display = 'block';
+                    pageTracker._trackPageview('/movie/gorillas.flv');
                 }
 
                 return true;
@@ -55,12 +57,11 @@
             function showGame() {
                 var gameElement = document.getElementById('game').getElementsByTagName('object')[0];
 
-                if(gameElement.style.display == 'block') {
-                    gameElement.style.display = 'none';
-                    pageTracker._trackPageview('/game/original');
-                } else {
+                if(!(gameElement.style.display == 'block')) {
                     gameElement.style.display = 'block';
-                }
+                    pageTracker._trackPageview('/game/original');
+                } else
+                    return false;
 
                 return true;
             }

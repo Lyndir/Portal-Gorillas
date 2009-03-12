@@ -42,6 +42,10 @@ h1 {
     padding:            1em;
     color:              #5F6CA0;
 }
+sub {
+    font-size:          60%;
+    font-style:         italic;
+}
 .preload {
     width:              0;
     height:             1px;
@@ -204,8 +208,9 @@ object {
     width:              640px;
     height:             350px;
     margin:             2em auto;
+    padding:            1px;
 
-    background:         url("images/original.png") top center no-repeat;
+    background:         url("images/original.png") 1px center no-repeat;
     border:             1px solid #9D9D9D;
 }
 #game object {

@@ -9,6 +9,7 @@
                     <param  name="movie" value="http://rickyroad.com/miscmedia/Gorilla.swf" />
                     <param  name="allowfullscreen" value="true" />
                 </object>
+                <sub>Your browser may need you to click the game before letting you type to it.</sub>
             </div>
 
             <!-- Referer -->
