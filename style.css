@@ -12,6 +12,31 @@ body {
     text-align:         center;
     font-family:        sans-serif;
 }
+label {
+    float:              left;
+    clear:              left;
+
+    width:              10em;
+    padding:            1ex 1em;
+
+    text-align:         right;
+}
+input {
+    float:              left;
+    display:            block;
+
+    width:              20em;
+    padding:            1ex;
+}
+input[type=text]:hover {
+    background:         #DDDDDD;
+}
+input[type=text]:active {
+    background:         #CCCCCC;
+}
+input[type=text]:focus {
+    background:         #EEEEEE;
+}
 img, a, a:hover {
     border:             none;
 
@@ -21,13 +46,43 @@ img, a, a:hover {
 a:hover {
     color:              #5F6CA0;
 }
-a.b {
+.border {
     border-bottom:      1px dotted #000250;
 }
-a.b:hover {
+.border:hover {
     border-bottom-color:#5F6CA0 !important;
     border-bottom-style:solid !important;
 }
+#comments {
+    width:              30em;
+    height:             3em;
+    margin:             -260px auto 5em;
+
+    color:              #99C;
+    font-style:         italic;
+}
+    #comments form {
+        position:       relative;
+        z-index:        2;
+        overflow:       hidden;
+
+        height:         2em;
+
+        color:          #000250;
+        font-style:     normal;
+    }
+    #comments form:hover {
+        height:         11em;
+        margin-top:     -1px;
+
+        border:         1px solid #5F6CA0;
+        background:     white;
+    }
+    #comments form p {
+        color:          #66C;
+        font-size:      8pt;
+        font-style:     italic;
+    }
 #content img {
     padding:            3px;
     margin:             0;
@@ -42,7 +97,7 @@ h1 {
     padding:            1em;
     color:              #5F6CA0;
 }
-sub {
+sup {
     font-size:          60%;
     font-style:         italic;
 }
@@ -74,12 +129,12 @@ sub {
 }
 #menu {
     position:           absolute;
-    z-index:            99;
+    z-index:            98;
 
     top:                0;
     left:               50%;
     width:              480px;
-    height:             50px;
+    height:             100px;
     margin:             0 0 0 -240px;
     padding:            0 46px;
 
@@ -92,19 +147,19 @@ sub {
 
     background:         url("images/menu-trans.png") no-repeat;
 }
-    #menu li {
+    #menu li, #submenu li {
         float:          left;
     }
-    #menu li.active {
+    #menu li.active, #submenu li.active {
         border-top:     3px solid #2D3F80;
     }
-    #menu li:hover {
+    #menu li:hover, #submenu li:hover {
         border-top:     3px solid #B70000;
     }
     #menu a {
         display:        block;
 
-        height:         40px;
+        height:         42px;
     }
     #menu .a a {
         width:          99px;
@@ -117,6 +172,33 @@ sub {
     }
     #menu .d a {
         width:          108px;
+    }
+#submenu {
+    position:           absolute;
+    z-index:            99;
+
+    top:                40px;
+    left:               50%;
+    width:              480px;
+    height:             100px;
+    margin:             0 0 0 -164px;
+    padding:            0 46px;
+
+    list-style:         none;
+}
+#submenu {
+    position:           fixed;
+}
+    #submenu a {
+        display:        block;
+
+        height:         22px;
+    }
+    #submenu .a a {
+        width:          118px;
+    }
+    #submenu .b a {
+        width:          118px;
     }
 #back .title {
     float:              left;
@@ -178,11 +260,10 @@ sub {
         text-decoration:underline;
     }
 object {
-    display:            none;
-    position:           relative;
-
     border:             none;
     background:         black;
+    position:           relative;
+    z-index:            89;
 }
 #preview {
     position:           relative;
@@ -191,16 +272,16 @@ object {
     height:             515px;
     margin:             0 auto;
 
-    background:         url("images/gorillas_phone.png") top center no-repeat;
+    background:         url("current/images/gorillas_phone.png") top center no-repeat;
 }
-#preview object {
-    position:           relative;
-
-    width:              482px;
-    height:             322px;
-    left:               50%;
-    margin-left:        -241px;
-    top:                32px;
+#preview.v100 {
+    background:         url("1.0/images/gorillas_phone.png") top center no-repeat;
+}
+#preview.v110 {
+    background:         url("1.1/images/gorillas_phone.png") top center no-repeat;
+}
+#preview #swf {
+    margin-top:         32px;
 }
 #game {
     position:           relative;
@@ -212,10 +293,6 @@ object {
 
     background:         url("images/original.png") 1px center no-repeat;
     border:             1px solid #9D9D9D;
-}
-#game object {
-    width:              640px;
-    height:             350px;
 }
 .iphone {
     display:            none;
@@ -241,7 +318,5 @@ object {
 }
 #screenshots img {
     margin:             1em 0;
-
-    background:         #C1C7DB;
 }
 
