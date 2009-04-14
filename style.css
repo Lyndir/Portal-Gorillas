@@ -54,21 +54,25 @@ a:hover {
     border-bottom-style:solid !important;
 }
 #comments {
+    position:           absolute;
+    z-index:            90;
+
+    top:                50px;
+    left:               50%;
     width:              30em;
     height:             3em;
-    margin:             -260px auto 5em;
+    margin-left:        -15em;
 
-    color:              #99C;
+    color:              #669;
     font-style:         italic;
 }
     #comments form {
         position:       relative;
-        z-index:        2;
+        z-index:        91;
         overflow:       hidden;
 
         height:         2em;
 
-        color:          #000250;
         font-style:     normal;
     }
     #comments form:hover {
@@ -77,9 +81,9 @@ a:hover {
 
         border:         1px solid #5F6CA0;
         background:     white;
+        color:          #000250;
     }
     #comments form p {
-        color:          #66C;
         font-size:      8pt;
         font-style:     italic;
     }
@@ -129,7 +133,7 @@ sup {
 }
 #menu {
     position:           absolute;
-    z-index:            98;
+    z-index:            88;
 
     top:                0;
     left:               50%;
@@ -175,7 +179,7 @@ sup {
     }
 #submenu {
     position:           absolute;
-    z-index:            99;
+    z-index:            89;
 
     top:                40px;
     left:               50%;
@@ -263,7 +267,7 @@ object {
     border:             none;
     background:         black;
     position:           relative;
-    z-index:            89;
+    z-index:            79;
 }
 #preview {
     position:           relative;

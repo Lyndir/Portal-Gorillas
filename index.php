@@ -11,7 +11,7 @@
     elseif(isset($_GET['test']))
         $target = 'test';
 
-    $version = '110';
+    $version = readlink("current");
     if(isset($_GET['v']))
         if($_GET['v'] == '1.0' || $_GET['v'] == '100')
             $version = '100';
@@ -160,12 +160,12 @@
                     <a href="http://lhunath.lyndir.com"
                         onclick="pageTracker._trackPageview(this.href.replace(/^[a-z]+:\/\//i, '/external/'));"></a></li>
             </ul>
-            <ul id="submenu">
+            <!--ul id="submenu">
                 <li class="a<?=($target == 'about' && $version == '100')? " active": ""?>">
                     <a href="/?about&amp;v=1.0"></a></li>
                 <li class="b<?=($target == 'about' && $version == '110')? " active": ""?>">
                     <a href="/?about&amp;v=1.1"></a></li>
-            </ul>
+            </ul-->
         </div>
 
         <div id="back">
@@ -199,8 +199,9 @@
             <? } ?>
             
             <form action="<?="?$target&amp;v=$version"?>" method="POST">
-                <p>Leave <b>your</b> impression!</p>
-                <p>Try to keep it short and sweet.</p>
+                <p>Post <b>your</b> impression.</p>
+                <p>Got a comment, opinion, impression or question?<br />
+                    Don't forget to leave your email address if you'd like me to get back to you.</p>
 
                 <label for="user">Name or email:</label>
                 <input type="text" name="name" id="name" value="<?=htmlspecialchars($name)?>" />
