@@ -203,11 +203,11 @@
                 <p>Got a comment, opinion, impression or question?<br />
                     Don't forget to leave your email address if you'd like me to get back to you.</p>
 
-                <label for="user">Name or email:</label>
-                <input type="text" name="name" id="name" value="<?=htmlspecialchars($name)?>" />
+                <label for="c_name">Name or email:</label>
+                <input type="text" name="name" id="c_name" value="<?=htmlspecialchars($name)?>" />
 
-                <label for="message">Your impression:</label>
-                <input type="text" name="message" id="message" value="<?=htmlspecialchars($message)?>" />
+                <label for="c_message">Your impression:</label>
+                <input type="text" name="message" id="c_message" value="<?=htmlspecialchars($message)?>" />
 
                 <label for="post"></label>
                 <input type="submit" name="post" id="post" value="Post" />

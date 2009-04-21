@@ -53,6 +53,17 @@ a:hover {
     border-bottom-color:#5F6CA0 !important;
     border-bottom-style:solid !important;
 }
+#message {
+    position:           absolute;
+
+    top:                150px;
+    left:               0;
+    width:              100%;
+
+    background:         url("images/back_bright.png") repeat-x scroll 0 -154px;
+    border:             1px solid #CDC;
+    border-width:       1px 0;
+}
 #comments {
     position:           absolute;
     z-index:            90;
