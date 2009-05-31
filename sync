@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-getopts :q _ && quiet=1
-
-unison ${quiet:+-auto -batch} "${0%/*}/" ssh://lhunath@gorillas.lyndir.com//var/www/gorillas.lyndir.com/htdocs/

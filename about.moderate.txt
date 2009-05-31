@@ -1,4 +1,0 @@
-dt: very cool.
-Craig: 3 things. Crashes too much.  Allow for entry of strengnth and angle like the original.  Sometimes pops up with a message instead of allowing throw.  Fix these things and I will give it 5 stars.
-brosen210@aol.com: there are problems with the new edition.  Freezes after you hit continue.
-jfonsoss@yahoo.es: I get a error sometimes, "unrecognized selector sent to instance 0x3b..." I have a screenshot too
