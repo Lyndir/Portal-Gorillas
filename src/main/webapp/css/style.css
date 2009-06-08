@@ -1,0 +1,252 @@
+/**************** Copyright 2009, Lhunath (Maarten Billemont) *****************/
+
+
+/* Theme: Men in business
+ *  - #202426
+ *  - #454E59
+ *  - #918D84
+ *  - #B9B391
+ *  - #DAD5C5
+ */
+
+
+/*******************************************************************************
+ * GLOBAL PROPERTIES *
+ */
+html, body {
+    margin:             0;
+    padding:            0;
+}
+html {
+    background:         white url("../images/head.tile.bw.png") repeat-x fixed;
+}
+body {
+    padding:            280px 1em 2em;
+
+    color:              #222;
+    background:         url("../images/head.logo.bw.png") no-repeat fixed;
+
+    text-align:         center;
+    font-family:        sans-serif;
+}
+a {
+    color:              #000;
+    text-decoration:    none;
+}
+a:hover {
+    color:              #444;
+    text-decoration:    underline;
+}
+#about a {
+    color:              #EEE;
+}
+#about a:hover {
+    color:              #FFF;
+}
+a img {
+    border:             none;                                                   /* IE puts borders on linked images */
+}
+h1 {
+    width:              80%;
+    margin:             auto;
+    border-bottom:      1px solid #202426;
+
+    color:              #202426;
+}
+
+
+/*******************************************************************************
+ * UTILITY CLASSES *
+ */
+.preload {
+    width:              0;
+    height:             1px;
+}
+.small {
+    font-size:          smaller;
+}
+.text {
+    width:              36%;
+    margin:             auto;
+    padding:            1em;
+
+    text-align:         left;
+    font-size:          smaller;
+}
+
+/*******************************************************************************
+ * GLOBAL PROPERTIES *
+ */
+#head {
+    position:           fixed;
+    overflow:           hidden;
+    z-index:            90;
+
+    top:                0;
+    left:               0;
+    width:              100%;
+    height:             26px;
+
+    background:         url("../images/head.tile.bw.png") repeat-x;
+
+    text-align:         left;
+}
+    #head a {
+        color:          #202426;
+    }
+    #head ul.tabs {
+        margin:         0;
+
+        list-style:     none;
+    }
+    #head ul.tabs li {
+        display:        inline-block;
+    }
+    #head ul.tabs li a {
+        display:        block;
+
+        height:         20px;
+        padding:        5px 1em 0 1em;
+    }
+    #head ul.tabs li.active a {
+        font-weight:    bold;
+    }
+    #head ul.tabs li.active a {
+        background:     white;
+    }
+    #head ul.tabs li a:hover {
+        background:     #DBDBDB;
+    }
+    #head ul.tabs li img {
+        float:          left;
+
+        height:         1em;
+        margin:         0 1ex 0 0;
+    }
+    #head li.right {
+        float:          right;
+    }
+#about {
+    position:           absolute;
+
+    top:                50px;
+    right:              200px;
+    width:              300px;
+
+    color:              #DDD;
+
+    text-align:         center;
+    font-size:          1.5em;
+}
+#foot {
+    position:           fixed;
+
+    bottom:             0;
+    left:               0;
+    width:              100%;
+    height:             1.5em;
+    padding:            0.5em 0 0;
+
+    background:         #BBB;
+    border-top:         1px solid #AAA;
+
+    font-size:          0.5em;
+}
+.button {
+    display:            block;
+
+    width:              0.7em           !important;
+    height:             0.7em           !important;
+    padding:            0               !important;
+    margin:             0.3em           !important;
+
+    border:             1px solid black !important;
+}
+.button.gray {
+    background:         #DDD            !important;
+    border:             1px solid #999  !important;
+}
+.button.gray:hover {
+    background:         #999            !important;
+    border:             1px solid #DDD  !important;
+}
+.button.blue {
+    background:         #CDD            !important;
+    border:             1px solid #499  !important;
+}
+.button.blue:hover {
+    background:         #499            !important;
+    border:             1px solid #CDD  !important;
+}
+.button.green {
+    background:         #CDC            !important;
+    border:             1px solid #596  !important;
+}
+.button.green:hover {
+    background:         #596            !important;
+    border:             1px solid #CDC  !important;
+}
+.tip {
+    position:           absolute;
+    display:            none;
+
+    top:                60px;
+    left:               50%;
+    width:              400px;
+    margin-left:        -200px;
+    padding:            0.5ex;
+
+    background:         #2D3F80;
+    border:             1px solid #5F6CA0;
+    color:              #C1C7DB;
+
+    font-size:          smaller;
+}
+    div:hover>.tip {
+        display:        block;
+    }
+.tip a, .tip a:link {
+    color:              white;
+    text-decoration:    none;
+}
+    .tip a:hover {
+        text-decoration:underline;
+    }
+object {
+    border:             none;
+    background:         black;
+    position:           relative;
+    z-index:            79;
+}
+#preview {
+    position:           relative;
+
+    width:              720px;
+    height:             515px;
+    margin:             0 auto;
+}
+#game {
+    position:           relative;
+
+    width:              640px;
+    height:             350px;
+    margin:             2em auto;
+    padding:            1px;
+
+    background:         url("images/original.png") 1px center no-repeat;
+    border:             1px solid #9D9D9D;
+}
+.iphone {
+    display:            none;
+
+    position:           absolute;
+
+    top:                0;
+    left:               0;
+    width:              100%;
+    height:             100%;
+}
+#screenshots img {
+    margin:             1em 0;
+}
+

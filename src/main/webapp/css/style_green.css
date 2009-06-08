@@ -1,0 +1,6 @@
+html, #head {
+    background-image:url("../images/head.tile.green.png");
+}
+body {
+    background-image:url("../images/head.logo.green.png");
+}

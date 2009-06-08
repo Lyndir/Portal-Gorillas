@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:wicket="http://wicket.sourceforge.net/">
+
+    <head>
+        <title wicket:id="pageTitle">
+            [Page Title]
+        </title>
+
+        <link rel="icon" href="favicon.png" type="image/x-png" />
+        <link rel="shortcut icon" href="favicon.png" type="image/x-png" />
+
+        <script type="text/javascript" src="http://www.lhunath.com/.jquery/jquery.js"></script>
+        <script type="text/javascript" src="http://www.lhunath.com/.jquery/jquery.timers.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!--[if lt IE 8]>
+            <script type="text/javascript">
+                IE7_PNG_SUFFIX = ".png";
+            </script>
+            <script type="text/javascript" src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js"></script>
+        <![endif]-->
+        <script type="text/javascript">
+            // Google Analytics
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </head>
+
+    <body>
+        <div id="head">
+            <ul wicket:id="headTabsContainer" class="tabs">
+                <li wicket:id="headTabs">
+                    <a wicket:id="link">
+                        <span wicket:id="title">[Tab]</span>
+                    </a>
+                </li>
+                <li class="right">
+                    <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=302275459&amp;mt=8"
+                        onclick="pageTracker._trackPageview(this.href.replace(/^[a-z]+:\/\//i, '/external/'));">
+                        <img src="images/download.png" /> Get it now &gt;
+                    </a>
+                </li>
+                <li wicket:id="themeTabs" class="right">
+                    <a wicket:id="link" class="button"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div wicket:id="contentPanel" />
+
+        <div id="foot">
+            <!-- W3C, Valid XHTML 1.0 -->
+            <!--a href="http://validator.w3.org/check?uri=referer">
+                <img src="images/valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" />
+            </a-->
+
+            <!-- Credits -->
+            <b>Gorillas</b> by
+            <a class="b" href="http://www.lhunath.com">Maarten Billemont</a>.
+
+            <!-- Track this page hit on GA -->
+            <script type="text/javascript">
+                try {
+                    var pageTracker = _gat._getTracker("UA-90535-5");
+                    pageTracker._trackPageview();
+                } catch(err) {}
+            </script>
+        </div>
+    </body>
+
+</html>
