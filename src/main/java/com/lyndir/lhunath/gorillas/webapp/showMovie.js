@@ -1,22 +1,13 @@
-// Flash demonstrational movie.
-function showMovie(container, version) {
+function showMovie(container) {
+
     var flashvars = {
-        file:           "/" + version + "/movies/gorillas.flv",
-        width:          "482",
-        height:         "322",
-        autostart:      "true",
-        displayheight:  "322",
-        showicons:      "false",
-        backcolor:      "0x000000",
-        frontcolor:     "0xCCCCCC",
-        lightcolor:     "0x557722"
+        config:         "{'clip':{'url': '${movieLink}'}}"
     };
     var params = {
-        menu:           "false"
     }
 
-    var swfElement = container.getElementById("swf");
-    if(swfElement) {
+    var swfElement = document.getElementById("swf");
+    if (swfElement) {
         swfobject.removeSWF("swf");
 
     } else {
@@ -24,21 +15,22 @@ function showMovie(container, version) {
         swfElement.setAttribute("id", "swf");
         container.appendChild(swfElement);
 
-        swfobject.embedSWF( ".jquery/shadowbox-2.0/flvplayer.swf", "swf", "482", "322",
-                            "9.0.0", "swfobject/expressInstall.swf", flashvars, params, {id: "swf"} );
+        swfobject.embedSWF( "js/flowplayer/flowplayer-3.1.1.swf", "swf", "482", "322",
+                            "9.0.0", "js/swfobject/expressInstall.swf", flashvars, params, {id: "swf"} );
 
-        pageTracker._trackPageview("/movie/gorillas-" + version + ".flv");
+        ${pageTrackCode}
     }
 
     return false;
 }
 
 $(document).ready(function() {
-    if(navigator.appVersion.indexOf('iPhone') == -1) {
+    if (navigator.appVersion.indexOf('iPhone') == -1) {
         var element = document.getElementById('preview');
-
-        element.onclick = function() { return showMovie(preview, '1.2'); };
-        if (element.captureEvents)
-            element.captureEvents(Event.CLICK);
+        if (element) {
+            element.onclick = function() { return showMovie(this); };
+            if (element.captureEvents)
+                element.captureEvents(Event.CLICK);
+        }
     }
-}
+});

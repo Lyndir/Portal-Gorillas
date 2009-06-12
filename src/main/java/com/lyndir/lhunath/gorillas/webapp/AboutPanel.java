@@ -17,8 +17,6 @@ package com.lyndir.lhunath.gorillas.webapp;
 
 import org.apache.wicket.markup.html.panel.Panel;
 
-import com.lyndir.lhunath.gorillas.model.GorilasVersion;
-
 
 /**
  * <h2>{@link AboutPanel}<br>
@@ -35,9 +33,6 @@ import com.lyndir.lhunath.gorillas.model.GorilasVersion;
  * @author lhunath
  */
 public class AboutPanel extends Panel {
-
-    protected GorilasVersion version = new GorilasVersion( "120", "1.2", "kOd6fI2Cm7c" );
-
 
     /**
      * @param id

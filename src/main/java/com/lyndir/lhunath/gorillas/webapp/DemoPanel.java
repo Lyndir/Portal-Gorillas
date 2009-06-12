@@ -15,21 +15,22 @@
  */
 package com.lyndir.lhunath.gorillas.webapp;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.util.string.StringValue;
+import org.apache.wicket.util.template.PackagedTextTemplate;
 
-import com.lyndir.lhunath.gorillas.model.GorilasVersion;
+import com.lyndir.lhunath.gorillas.model.GorillasVersion;
 
 
 /**
  * <h2>{@link DemoPanel}<br>
- * <sub>[in short] (TODO).</sub></h2>
- * 
- * <p>
- * [description / usage].
- * </p>
+ * <sub>The interface panel that shows a video demonstration of the game.</sub></h2>
  * 
  * <p>
  * <i>May 31, 2009</i>
@@ -37,9 +38,10 @@ import com.lyndir.lhunath.gorillas.model.GorilasVersion;
  * 
  * @author lhunath
  */
-public class DemoPanel extends Panel {
+public class DemoPanel extends Panel implements JavaScriptProvider {
 
-    protected GorilasVersion version = new GorilasVersion( "120", "1.2", "kOd6fI2Cm7c" );
+    private static final String JS_KEY_MOVIE_LINK     = "movieLink";
+    private static final String JS_KEY_PAGETRACK_CODE = "pageTrackCode";
 
 
     /**
@@ -50,29 +52,19 @@ public class DemoPanel extends Panel {
 
         super( id );
 
-        WebMarkupContainer preview = new WebMarkupContainer( "preview" ) {
+        add( new Label( "version", GorillasVersion.getLatest().getShortVersion() ) );
 
-            @Override
-            protected void onComponentTag(ComponentTag tag) {
-
-                tag.put( "style", //
-                         StringValue.valueOf( String.format( "background-image: url('%s/images/gorillas_phone.png')", //
-                                                             version.getFullVersion() ) ) );
-                super.onComponentTag( tag );
-            }
-        };
-
+        WebMarkupContainer preview = new WebMarkupContainer( "preview" );
         preview.add( new WebMarkupContainer( "youtube" ) {
 
             @Override
             protected void onComponentTag(ComponentTag tag) {
 
                 tag.put( "href", //
-                         StringValue.valueOf( String.format( "http://www.youtube.com/watch?v=%s", //
-                                                             version.getYouTubeID() ) ) );
+                         StringValue.valueOf( GorillasVersion.getLatest().getYouTubeLink() ) );
                 tag.put( "onclick", //
-                         StringValue.valueOf( String.format( "pageTracker._trackPageview('/movie/youtube-%s');", //
-                                                             version.getShortVersion() ) ) );
+                         StringValue.valueOf( GorillasVersion.getLatest().getYouTubePageTrackCode() ) );
+
                 super.onComponentTag( tag );
             }
         } );
@@ -82,11 +74,10 @@ public class DemoPanel extends Panel {
             protected void onComponentTag(ComponentTag tag) {
 
                 tag.put( "href", //
-                         StringValue.valueOf( String.format( "http://www.youtube.com/watch?v=%s", //
-                                                             version.getYouTubeID() ) ) );
+                         StringValue.valueOf( GorillasVersion.getLatest().getYouTubeLink() ) );
                 tag.put( "onclick", //
-                         StringValue.valueOf( String.format( "pageTracker._trackPageview('/movie/youtube-%s');", //
-                                                             version.getShortVersion() ) ) );
+                         StringValue.valueOf( GorillasVersion.getLatest().getYouTubePageTrackCode() ) );
+
                 super.onComponentTag( tag );
             }
         } );
@@ -96,15 +87,26 @@ public class DemoPanel extends Panel {
             protected void onComponentTag(ComponentTag tag) {
 
                 tag.put( "href", //
-                         StringValue.valueOf( String.format( "%s/movies/gorillas.mp4", //
-                                                             version.getShortVersion() ) ) );
+                         StringValue.valueOf( GorillasVersion.getLatest().getMP4Link() ) );
                 tag.put( "onclick", //
-                         StringValue.valueOf( String.format( "pageTracker._trackPageview('/movie/gorillas-%s.mp4');", //
-                                                             version.getShortVersion() ) ) );
+                         StringValue.valueOf( GorillasVersion.getLatest().getMP4PageTrackCode() ) );
+
                 super.onComponentTag( tag );
             }
         } );
 
         add( preview );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public String getProvidedJavaScript() {
+
+        Map<String, Object> variablesMap = new HashMap<String, Object>();
+        variablesMap.put( JS_KEY_MOVIE_LINK, GorillasVersion.getLatest().getFLVLink() );
+        variablesMap.put( JS_KEY_PAGETRACK_CODE, GorillasVersion.getLatest().getFLVPageTrackCode() );
+
+        return new PackagedTextTemplate( getClass(), "showMovie.js" ).asString( variablesMap );
     }
 }

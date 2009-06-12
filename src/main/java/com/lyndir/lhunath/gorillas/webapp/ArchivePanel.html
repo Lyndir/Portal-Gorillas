@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:wicket="http://wicket.sourceforge.net/">
+
+    <body>
+        <wicket:panel>
+
+            <div id="about">
+                <p><b>Gorillas</b><br />
+                    The Archives</p>
+            </div>
+
+            <div class="text">
+                <p>Welcome to the Gorillas Archives.  Here you'll find an overview of the current and past Gorillas versions.</p>
+            </div>
+
+            <div class="entry" wicket:id="entries">
+                <span class="title">Gorillas <span wicket:id="version">[tba]</span></span>
+                <img alt="Screenshot of Gorillas" wicket:id="screenshot" />
+                <ul>
+                    <li>Video: <a wicket:id="youtube">[YouTube]</a>, <a wicket:id="flash">[Flash]</a>, <a wicket:id="mpeg">[MP4]</a>.</li>
+                    <li>Changes since last version:
+                        <ul>
+                            <li wicket:id="changes">[tba]</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </wicket:panel>
+    </body>
+
+</html>

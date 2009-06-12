@@ -3,10 +3,15 @@ package com.lyndir.lhunath.gorillas.webapp;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import javax.servlet.http.Cookie;
+
+import org.apache.wicket.RestartResponseException;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxFallbackLink;
 import org.apache.wicket.behavior.HeaderContributor;
+import org.apache.wicket.behavior.StringHeaderContributor;
 import org.apache.wicket.extensions.markup.html.tabs.AbstractTab;
 import org.apache.wicket.extensions.markup.html.tabs.ITab;
 import org.apache.wicket.markup.ComponentTag;
@@ -19,14 +24,18 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.util.template.JavaScriptTemplate;
+import org.apache.wicket.util.template.TextTemplate;
 
 
 public class LayoutPage extends WebPage {
 
-    private static final long serialVersionUID = 1L;
+    private static final long   serialVersionUID  = 1L;
+    private static final String DEFAULT_THEME     = "gray";
+    private static final String COOKIE_THEME_NAME = "layout.theme";
 
-    static List<ITab>         headTabsList;
-    static List<String>       themesList;
+    static List<ITab>           headTabsList;
+    static List<String>         themesList;
     static {
         headTabsList = new ArrayList<ITab>( 2 );
         headTabsList.add( new AbstractTab( new Model<String>( "Demo" ) ) {
@@ -45,25 +54,40 @@ public class LayoutPage extends WebPage {
                 return new AboutPanel( wicketId );
             }
         } );
+        headTabsList.add( new AbstractTab( new Model<String>( "Archives" ) ) {
+
+            @Override
+            public Panel getPanel(String wicketId) {
+
+                return new ArchivePanel( wicketId );
+            }
+        } );
         headTabsList.add( new AbstractTab( new Model<String>( "Original" ) ) {
 
             @Override
             public Panel getPanel(String wicketId) {
 
-                throw new UnsupportedOperationException();
-                // return new ProfileIntroPanel( wicketId );
+                return new OriginalPanel( wicketId );
+            }
+        } );
+        headTabsList.add( new AbstractTab( new Model<String>( "Trac" ) ) {
+
+            @Override
+            public Panel getPanel(String wicketId) {
+
+                throw new RestartResponseException( TracPage.class );
             }
         } );
 
         themesList = new ArrayList<String>( 2 );
-        themesList.add( "gray" );
+        themesList.add( DEFAULT_THEME );
         themesList.add( "blue" );
         themesList.add( "green" );
     }
 
-    int                       selectedTabIndex;
-    HeaderContributor         selectedTheme;
-    WebMarkupContainer        headTabsContainer;
+    int                         selectedTabIndex;
+    HeaderContributor           selectedTheme;
+    WebMarkupContainer          headTabsContainer;
 
 
     /**
@@ -99,11 +123,38 @@ public class LayoutPage extends WebPage {
                         Panel contentPanel = headTab.getPanel( "contentPanel" );
                         contentPanel.setOutputMarkupId( true );
 
+                        // OnShowJavaScript
+                        String js = null;
+                        if (contentPanel instanceof JavaScriptProvider)
+                            js = ((JavaScriptProvider) contentPanel).getProvidedJavaScript();
+
                         LayoutPage.this.addOrReplace( contentPanel );
 
                         if (target != null) {
+                            // AJAX Support
                             target.addComponent( contentPanel );
                             target.addComponent( headTabsContainer );
+
+                            if (js != null)
+                                target.appendJavascript( js );
+                        } else {
+                            // No AJAX Support
+                            final String jsTemplate = js;
+
+                            add( new StringHeaderContributor( new JavaScriptTemplate( new TextTemplate() {
+
+                                @Override
+                                public TextTemplate interpolate(Map<String, Object> variables) {
+
+                                    return this;
+                                }
+
+                                @Override
+                                public String getString() {
+
+                                    return jsTemplate;
+                                }
+                            } ).asString() ) );
                         }
                     }
                 };
@@ -139,13 +190,7 @@ public class LayoutPage extends WebPage {
                     @Override
                     public void onClick() {
 
-                        // TAB click.
-                        if (selectedTheme != null)
-                            getPage().remove( selectedTheme );
-
-                        String themeStyleSheet = MessageFormat.format( "css/style_{0}.css", theme );
-                        selectedTheme = CSSPackageResource.getHeaderContribution( themeStyleSheet );
-                        getPage().add( selectedTheme );
+                        setSelectedTheme( theme );
                     }
 
                     @Override
@@ -163,11 +208,56 @@ public class LayoutPage extends WebPage {
         headTabsContainer.add( headTabs, themeTabs );
         headTabsContainer.setOutputMarkupId( true );
 
-        // Page INTRO.
-        Panel contentPanel = headTabsList.get( 0 ).getPanel( "contentPanel" );
+        // Initial theme.
+        setDefaultTheme();
+
+        // Page content.
+        Panel contentPanel = getDefaultPanel( "contentPanel" );
         contentPanel.setOutputMarkupId( true );
 
         add( pageTitle, headTabsContainer, contentPanel );
+    }
+
+    protected void setDefaultTheme() {
+
+        if (selectedTheme != null)
+            // A theme is already set; won't overwrite with default.
+            return;
+
+        // Default is either hard coded, or overridden by cookie.
+        String theme = DEFAULT_THEME;
+        Cookie cookie = getWebRequestCycle().getWebRequest().getCookie( COOKIE_THEME_NAME );
+        if (cookie != null)
+            theme = cookie.getValue();
+
+        setSelectedTheme( theme );
+    }
+
+    protected void setSelectedTheme(final String theme) {
+
+        if (selectedTheme != null)
+            // A theme is already active, deactivate it first.
+            getPage().remove( selectedTheme );
+
+        // Remember this theme selection for next visit.
+        Cookie cookie = new Cookie( COOKIE_THEME_NAME, theme );
+        cookie.setMaxAge( Integer.MAX_VALUE );
+        getWebRequestCycle().getWebResponse().addCookie( cookie );
+
+        // Create and add the CSS header contribution that will render this theme.
+        String themeStyleSheet = MessageFormat.format( "css/style_{0}.css", theme );
+        selectedTheme = CSSPackageResource.getHeaderContribution( themeStyleSheet );
+        getPage().add( selectedTheme );
+    }
+
+    /**
+     * @param wicketId
+     *            The wicket ID that the panel should have.
+     * @return The {@link Panel} to show as the content before any tabs have been selected.
+     */
+    protected Panel getDefaultPanel(String wicketId) {
+
+        return headTabsList.get( 0 ).getPanel( wicketId );
     }
 
     /**

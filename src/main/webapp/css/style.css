@@ -18,30 +18,36 @@ html, body {
     padding:            0;
 }
 html {
-    background:         white url("../images/head.tile.bw.png") repeat-x fixed;
+    background:         white url("../images/layout/head.tile.bw.png") repeat-x fixed;
 }
 body {
     padding:            280px 1em 2em;
 
-    color:              #222;
-    background:         url("../images/head.logo.bw.png") no-repeat fixed;
+    color:              #333;
+    background:         url("../images/layout/head.logo.bw.png") no-repeat fixed;
 
     text-align:         center;
     font-family:        sans-serif;
 }
 a {
-    color:              #000;
+    color:              #333;
+    border-bottom:      1px dashed #333;
+
     text-decoration:    none;
 }
 a:hover {
-    color:              #444;
-    text-decoration:    underline;
+    color:              #000;
+    border-bottom:      1px solid #000;
+
+    text-decoration:    none;
 }
 #about a {
-    color:              #EEE;
+    color:              #DDD;
+    border-bottom:      1px dashed #DDD;
 }
 #about a:hover {
     color:              #FFF;
+    border-bottom:      1px dashed #FFF;
 }
 a img {
     border:             none;                                                   /* IE puts borders on linked images */
@@ -50,8 +56,9 @@ h1 {
     width:              80%;
     margin:             auto;
     border-bottom:      1px solid #202426;
-
-    color:              #202426;
+}
+code {
+    font-size:          inherit;
 }
 
 
@@ -65,13 +72,29 @@ h1 {
 .small {
     font-size:          smaller;
 }
+.noborder {
+    border:             none;
+}
 .text {
-    width:              36%;
+    width:              50%;
     margin:             auto;
     padding:            1em;
 
+    background:         #BBB;
+    border:             1px solid #999;
+
     text-align:         left;
     font-size:          smaller;
+}
+.text[class] {
+    background:         rgba(70%, 70%, 70%, .3) url("../images/layout/back.buildings.png") repeat-x bottom;
+}
+.error {
+    background:         #FBB;
+    border:             1px solid #F99;
+}
+.error[class] {
+    background:         rgba(100%, 70%, 70%, .3);
 }
 
 /*******************************************************************************
@@ -87,12 +110,17 @@ h1 {
     width:              100%;
     height:             26px;
 
-    background:         url("../images/head.tile.bw.png") repeat-x;
+    background:         url("../images/layout/head.tile.bw.png") repeat-x;
 
     text-align:         left;
 }
     #head a {
-        color:          #202426;
+        color:          #333;
+        border:         none;
+    }
+    #head a:hover {
+        color:          #000;
+        border:         none;
     }
     #head ul.tabs {
         margin:         0;
@@ -224,17 +252,27 @@ object {
     width:              720px;
     height:             515px;
     margin:             0 auto;
+
+    background:         url("../images/game/gorillas_phone.png") no-repeat;
+}
+#preview #swf {
+    margin-top:         32px;
 }
 #game {
     position:           relative;
 
     width:              640px;
     height:             350px;
-    margin:             2em auto;
-    padding:            1px;
+    margin:             0 auto;
 
-    background:         url("images/original.png") 1px center no-repeat;
-    border:             1px solid #9D9D9D;
+    background:         url("../images/game/original.png") no-repeat;
+    border:             1px solid #999;
+}
+#game[id] {
+    opacity:            0.7;
+}
+#game[id]>* {
+    opacity:            1;
 }
 .iphone {
     display:            none;
