@@ -137,6 +137,7 @@ public class LayoutPage extends WebPage {
 
                             if (js != null)
                                 target.appendJavascript( js );
+                            target.appendJavascript( "Shadowbox.setup();" );
                         } else {
                             // No AJAX Support
                             final String jsTemplate = js;

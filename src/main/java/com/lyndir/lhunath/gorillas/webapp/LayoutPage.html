@@ -15,6 +15,8 @@
         <script type="text/javascript" src="http://www.lhunath.com/.jquery/jquery.timers.js"></script>
         <script type="text/javascript" src="js/swfobject/swfobject.js"></script>
         <script type="text/javascript" src="js/flowplayer/flowplayer-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/shadowbox-3.0/shadowbox.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/shadowbox-3.0/shadowbox.css">
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <!--[if lt IE 8]>
             <script type="text/javascript">
@@ -26,6 +28,11 @@
             // Google Analytics
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+            // Shadowbox
+            Shadowbox.init({
+                players:        ["img","flv"]
+            });
         </script>
     </head>
 

@@ -15,14 +15,14 @@
  */
 package com.lyndir.lhunath.gorillas.webapp;
 
+import java.text.DateFormat;
+
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.image.Image;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.util.string.StringValue;
 
 import com.lyndir.lhunath.gorillas.model.GorillasVersion;
 
@@ -54,53 +54,87 @@ public class ArchivePanel extends Panel {
         ListView<GorillasVersion> entries = new ListView<GorillasVersion>( "entries", GorillasVersion.getAll() ) {
 
             @Override
-            protected void populateItem(ListItem<GorillasVersion> item) {
+            protected void populateItem(ListItem<GorillasVersion> entryItem) {
 
-                final GorillasVersion version = item.getModelObject();
+                final GorillasVersion version = entryItem.getModelObject();
 
-                item.add( new Label( "version", version.getShortVersion() ) );
-                item.add( new Image( "screenshot", version.getScreenShotLink() ) );
-                item.add( new WebMarkupContainer( "youtube" ) {
+                entryItem.add( new Label( "version", version.getShortVersion() ) );
+                entryItem.add( new Label( "date",
+                        DateFormat.getDateInstance( DateFormat.LONG, getLocale() ).format( version.getCompletionDate() ) ) );
+
+                entryItem.add( new WebMarkupContainer( "screenshot" ) {
+
+                    @Override
+                    protected void onComponentTag(ComponentTag tag) {
+
+                        tag.put( "src", //
+                                 version.getScreenShotLink() );
+
+                        super.onComponentTag( tag );
+                    }
+                } );
+                entryItem.add( new WebMarkupContainer( "youtube" ) {
 
                     @Override
                     protected void onComponentTag(ComponentTag tag) {
 
                         tag.put( "href", //
-                                 StringValue.valueOf( version.getYouTubeLink() ) );
+                                 version.getYouTubeLink() );
                         tag.put( "onclick", //
-                                 StringValue.valueOf( version.getYouTubePageTrackCode() ) );
+                                 version.getYouTubePageTrackCode() );
 
                         super.onComponentTag( tag );
                     }
                 } );
-                item.add( new WebMarkupContainer( "flash" ) {
+                entryItem.add( new WebMarkupContainer( "flash" ) {
 
                     @Override
                     protected void onComponentTag(ComponentTag tag) {
 
                         tag.put( "href", //
-                                 StringValue.valueOf( version.getFLVLink() ) );
+                                 version.getFLVLink() );
                         tag.put( "onclick", //
-                                 StringValue.valueOf( version.getFLVPageTrackCode() ) );
+                                 version.getFLVPageTrackCode() );
 
                         super.onComponentTag( tag );
                     }
                 } );
-                item.add( new WebMarkupContainer( "mpeg" ) {
+                entryItem.add( new WebMarkupContainer( "mpeg" ) {
 
                     @Override
                     protected void onComponentTag(ComponentTag tag) {
 
                         tag.put( "href", //
-                                 StringValue.valueOf( version.getMP4Link() ) );
+                                 version.getMP4Link() );
                         tag.put( "onclick", //
-                                 StringValue.valueOf( version.getMP4PageTrackCode() ) );
+                                 version.getMP4PageTrackCode() );
 
                         super.onComponentTag( tag );
                     }
 
                 } );
 
+                entryItem.add( new ListView<String>( "changes", version.getChanges() ) {
+
+                    @Override
+                    protected void populateItem(ListItem<String> changesItem) {
+
+                        changesItem.add( new Label( "description", changesItem.getModelObject() ) );
+                    }
+                } );
+
+                entryItem.add( new WebMarkupContainer( "source" ) {
+
+                    @Override
+                    protected void onComponentTag(ComponentTag tag) {
+
+                        tag.put( "href", //
+                                 String.format( "http://gorillas.lyndir.com/trac/browser/?rev=%s", //
+                                                version.getFullVersion() ) );
+
+                        super.onComponentTag( tag );
+                    }
+                } );
             }
         };
 

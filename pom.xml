@@ -107,7 +107,7 @@
                 <artifactId>maven-jetty-plugin</artifactId>
                 <version>6.1.15</version>
                 <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <scanIntervalSeconds>2</scanIntervalSeconds>
                 </configuration>
             </plugin>
         </plugins>

@@ -17,13 +17,13 @@ package com.lyndir.lhunath.gorillas.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 
 /**
@@ -42,37 +42,38 @@ import org.slf4j.LoggerFactory;
  */
 public class GorillasVersion implements Serializable, Comparable<GorillasVersion> {
 
-    private static final Logger                     logger   = LoggerFactory.getLogger( GorillasVersion.class );
+    private static final SortedMap<String, GorillasVersion> versions = new TreeMap<String, GorillasVersion>();
 
-    private static final SortedSet<GorillasVersion> versions = new TreeSet<GorillasVersion>();
-    static {
-        versions.add( new GorillasVersion( "100", "1.0", "Hu4Y8eJLqkI", true ) );
-        versions.add( new GorillasVersion( "110", "1.1", "kOd6fI2Cm7c", false ) );
-        versions.add( new GorillasVersion( "120", "1.2", "kOd6fI2Cm7c", true ) );
-    }
-
-    private String                                  fullVersion;
-    private String                                  shortVersion;
-    private String                                  youTubeID;
-    private boolean                                 shownInArchive;
+    private String                                          fullVersion;
+    private String                                          shortVersion;
+    private Date                                            completionDate;
+    private String                                          youTubeID;
+    private List<String>                                    changes;
 
 
     public static List<GorillasVersion> getAll() {
 
-        return Collections.unmodifiableList( new ArrayList<GorillasVersion>( versions ) );
+        return Collections.unmodifiableList( new ArrayList<GorillasVersion>( versions.values() ) );
     }
 
     public static GorillasVersion getLatest() {
 
-        return versions.last();
+        return versions.get( versions.lastKey() );
     }
 
-    public GorillasVersion(String fullVersion, String shortVersion, String youTubeID, boolean shownInArchive) {
+    public static void register(GorillasVersion gorillasVersion) {
+
+        versions.put( gorillasVersion.getFullVersion(), gorillasVersion );
+    }
+
+    public GorillasVersion(String fullVersion, String shortVersion, Date completionDate, String youTubeID,
+            String... changes) {
 
         this.fullVersion = fullVersion;
         this.shortVersion = shortVersion;
+        this.completionDate = completionDate;
         this.youTubeID = youTubeID;
-        this.shownInArchive = shownInArchive;
+        this.changes = new LinkedList<String>( Arrays.asList( changes ) );
     }
 
     /**
@@ -155,6 +156,14 @@ public class GorillasVersion implements Serializable, Comparable<GorillasVersion
     }
 
     /**
+     * @return The date when this version was completed and committed into the code repository.
+     */
+    public Date getCompletionDate() {
+
+        return completionDate;
+    }
+
+    /**
      * @return The youTubeID that references a YouTube movie that demos this version
      */
     public String getYouTubeID() {
@@ -163,11 +172,20 @@ public class GorillasVersion implements Serializable, Comparable<GorillasVersion
     }
 
     /**
-     * @return <code>true</code> if this version should be shown in the archives.
+     * @return The list of changes introduced by this version since the last.
      */
-    public boolean isShownInArchive() {
+    public List<String> getChanges() {
 
-        return shownInArchive;
+        return changes;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+
+        return String.format( "{%s - %s, [yt: %s]}", shortVersion, fullVersion, youTubeID );
     }
 
     /**

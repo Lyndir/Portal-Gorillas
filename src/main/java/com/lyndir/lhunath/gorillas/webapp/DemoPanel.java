@@ -22,7 +22,6 @@ import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.util.string.StringValue;
 import org.apache.wicket.util.template.PackagedTextTemplate;
 
 import com.lyndir.lhunath.gorillas.model.GorillasVersion;
@@ -61,9 +60,9 @@ public class DemoPanel extends Panel implements JavaScriptProvider {
             protected void onComponentTag(ComponentTag tag) {
 
                 tag.put( "href", //
-                         StringValue.valueOf( GorillasVersion.getLatest().getYouTubeLink() ) );
+                         GorillasVersion.getLatest().getYouTubeLink() );
                 tag.put( "onclick", //
-                         StringValue.valueOf( GorillasVersion.getLatest().getYouTubePageTrackCode() ) );
+                         GorillasVersion.getLatest().getYouTubePageTrackCode() );
 
                 super.onComponentTag( tag );
             }
@@ -74,9 +73,9 @@ public class DemoPanel extends Panel implements JavaScriptProvider {
             protected void onComponentTag(ComponentTag tag) {
 
                 tag.put( "href", //
-                         StringValue.valueOf( GorillasVersion.getLatest().getYouTubeLink() ) );
+                         GorillasVersion.getLatest().getYouTubeLink() );
                 tag.put( "onclick", //
-                         StringValue.valueOf( GorillasVersion.getLatest().getYouTubePageTrackCode() ) );
+                         GorillasVersion.getLatest().getYouTubePageTrackCode() );
 
                 super.onComponentTag( tag );
             }
@@ -87,9 +86,9 @@ public class DemoPanel extends Panel implements JavaScriptProvider {
             protected void onComponentTag(ComponentTag tag) {
 
                 tag.put( "href", //
-                         StringValue.valueOf( GorillasVersion.getLatest().getMP4Link() ) );
+                         GorillasVersion.getLatest().getMP4Link() );
                 tag.put( "onclick", //
-                         StringValue.valueOf( GorillasVersion.getLatest().getMP4PageTrackCode() ) );
+                         GorillasVersion.getLatest().getMP4PageTrackCode() );
 
                 super.onComponentTag( tag );
             }

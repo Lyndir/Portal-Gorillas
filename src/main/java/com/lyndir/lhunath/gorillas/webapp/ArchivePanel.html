@@ -14,17 +14,28 @@
                 <p>Welcome to the Gorillas Archives.  Here you'll find an overview of the current and past Gorillas versions.</p>
             </div>
 
-            <div class="entry" wicket:id="entries">
-                <span class="title">Gorillas <span wicket:id="version">[tba]</span></span>
+            <div class="text entry" wicket:id="entries">
                 <img alt="Screenshot of Gorillas" wicket:id="screenshot" />
+                <h2>
+                    Gorillas <span wicket:id="version">[tba]</span>
+                    <sup wicket:id="date">[tba]</sup>
+                </h2>
+
+                <h3>Video</h3>
                 <ul>
-                    <li>Video: <a wicket:id="youtube">[YouTube]</a>, <a wicket:id="flash">[Flash]</a>, <a wicket:id="mpeg">[MP4]</a>.</li>
-                    <li>Changes since last version:
-                        <ul>
-                            <li wicket:id="changes">[tba]</li>
-                        </ul>
-                    </li>
+                    <li><a wicket:id="youtube">[YouTube]</a></li>
+                    <li><a wicket:id="flash" rel="shadowbox;width=480;height=320">[Flash]</a></li>
+                    <li><a wicket:id="mpeg">[MPEG-4]</a></li>
                 </ul>
+
+                <h3>Changes since last version</h3>
+                <ul>
+                    <li wicket:id="changes"><span wicket:id="description">[tba]</span></li>
+                </ul>
+
+                <a class="button" wicket:id="source">Source &gt;</a>
+
+                <div class="floatstop"></div>
             </div>
 
         </wicket:panel>

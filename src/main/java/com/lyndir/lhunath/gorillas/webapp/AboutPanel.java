@@ -15,7 +15,12 @@
  */
 package com.lyndir.lhunath.gorillas.webapp;
 
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
+
+import com.lyndir.lhunath.gorillas.model.GorillasVersion;
 
 
 /**
@@ -41,5 +46,25 @@ public class AboutPanel extends Panel {
     public AboutPanel(String id) {
 
         super( id );
+
+        add( new ListView<GorillasVersion>( "versions", GorillasVersion.getAll() ) {
+
+            @Override
+            protected void populateItem(ListItem<GorillasVersion> versionItem) {
+
+                final GorillasVersion version = versionItem.getModelObject();
+
+                versionItem.add( new Label( "version", version.getShortVersion() ) );
+                versionItem.add( new ListView<String>( "changes", version.getChanges() ) {
+
+                    @Override
+                    protected void populateItem(ListItem<String> versionChangeItem) {
+
+                        versionChangeItem.add( new Label( "change", versionChangeItem.getModelObject() ) );
+                    }
+                } );
+                versionItem.setVisible( !version.getChanges().isEmpty() );
+            }
+        } );
     }
 }

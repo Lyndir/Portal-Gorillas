@@ -6,6 +6,11 @@
 
     <display-name>${pom.name}</display-name>
 
+    <!-- Application Event Listeners -->
+    <listener>
+        <listener-class>com.lyndir.lhunath.gorillas.listener.GorillasListener</listener-class>
+    </listener>
+
     <!-- Application Filter Definitions And Mappings -->
 	<filter>
 		<filter-name>WicketFilter</filter-name>

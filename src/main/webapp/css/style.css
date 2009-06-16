@@ -47,15 +47,27 @@ a:hover {
 }
 #about a:hover {
     color:              #FFF;
-    border-bottom:      1px dashed #FFF;
+    border-bottom:      1px solid #FFF;
 }
 a img {
     border:             none;                                                   /* IE puts borders on linked images */
 }
-h1 {
-    width:              80%;
-    margin:             auto;
-    border-bottom:      1px solid #202426;
+h2 {
+    margin:             1em 2em;
+
+    font-size:          2em;
+}
+h3 {
+    margin:             1em;
+
+    font-size:          1.5em;
+}
+h1 sup, h2 sup, h3 sup {
+    display:            block;
+
+    margin-left:        2em;
+
+    font-size:          12pt;
 }
 code {
     font-size:          inherit;
@@ -77,17 +89,17 @@ code {
 }
 .text {
     width:              50%;
-    margin:             auto;
+    margin:             1em auto;
     padding:            1em;
 
-    background:         #BBB;
+    background:         #CCC;
     border:             1px solid #999;
 
     text-align:         left;
     font-size:          smaller;
 }
 .text[class] {
-    background:         rgba(70%, 70%, 70%, .3) url("../images/layout/back.buildings.png") repeat-x bottom;
+    background:         rgba(85%, 85%, 85%, .7);
 }
 .error {
     background:         #FBB;
@@ -95,6 +107,22 @@ code {
 }
 .error[class] {
     background:         rgba(100%, 70%, 70%, .3);
+}
+.floatstop {
+    clear:              both;
+}
+.separator {
+    padding:            0.5em 1em;
+    margin-top:         1em;
+
+    border-top:         1px solid #999;
+
+    list-style:         none;
+    text-align:         right;
+    font-size:          0.5em;
+}
+.separator span {
+    float:              right;
 }
 
 /*******************************************************************************
@@ -175,12 +203,12 @@ code {
     height:             1.5em;
     padding:            0.5em 0 0;
 
-    background:         #BBB;
-    border-top:         1px solid #AAA;
+    background:         #CCC;
+    border-top:         1px solid #999;
 
     font-size:          0.5em;
 }
-.button {
+#head .button {
     display:            block;
 
     width:              0.7em           !important;
@@ -213,6 +241,32 @@ code {
 .button.green:hover {
     background:         #596            !important;
     border:             1px solid #CDC  !important;
+}
+.entry {
+    padding:            1em 2em;
+    margin:             2em auto;
+    width:              63%;
+}
+.entry img {
+    float:              right;
+
+    width:              45%;
+}
+.entry .button {
+    display:            block;
+
+    padding:            1ex;
+    margin:             2em auto 1em 7em;
+    width:              10ex;
+
+    background:         #CCC;
+    border:             1px solid #999;
+
+    text-align:         center;
+    font-size:          larger;
+}
+.entry .button:hover {
+    background:         #FFF;
 }
 .tip {
     position:           absolute;
@@ -264,8 +318,9 @@ object {
     width:              640px;
     height:             350px;
     margin:             0 auto;
+    padding:            20px;
 
-    background:         url("../images/game/original.png") no-repeat;
+    background:         #CCC url("../images/game/original.png") no-repeat center center;
     border:             1px solid #999;
 }
 #game[id] {
