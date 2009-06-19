@@ -13,11 +13,11 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.lyndir.lhunath.gorillas.webapp.error;
+package com.lyndir.lhunath.gorillas.web.app.error;
 
 import org.apache.wicket.markup.html.panel.Panel;
 
-import com.lyndir.lhunath.gorillas.webapp.MessagePage;
+import com.lyndir.lhunath.gorillas.web.app.page.MessagePage;
 
 
 /**

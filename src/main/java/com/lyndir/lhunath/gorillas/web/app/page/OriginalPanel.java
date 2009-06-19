@@ -13,13 +13,17 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.lyndir.lhunath.gorillas.webapp;
+package com.lyndir.lhunath.gorillas.web.app.page;
 
 import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.util.template.PackagedTextTemplate;
+
+import com.lyndir.lhunath.gorillas.web.app.JavaScriptProvider;
+
 
 
 /**
- * <h2>{@link TracPage}<br>
+ * <h2>{@link OriginalPanel}<br>
  * <sub>[in short] (TODO).</sub></h2>
  * 
  * <p>
@@ -32,33 +36,22 @@ import org.apache.wicket.markup.html.panel.Panel;
  * 
  * @author lhunath
  */
-public class TracPage extends MessagePage {
-
-    @Override
-    protected Panel getDefaultPanel(String wicketId) {
-
-        return new TracPanel( wicketId );
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected String getRedirectUrl() {
-
-        return "/trac";
-    }
-}
-
-
-class TracPanel extends Panel {
+public class OriginalPanel extends Panel implements JavaScriptProvider {
 
     /**
      * @param id
      *            The Wicket ID of this panel.
      */
-    public TracPanel(String id) {
+    public OriginalPanel(String id) {
 
         super( id );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public String getProvidedJavaScript() {
+
+        return new PackagedTextTemplate( getClass(), "showGame.js" ).asString();
     }
 }

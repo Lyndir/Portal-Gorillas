@@ -1,4 +1,4 @@
-package com.lyndir.lhunath.gorillas.webapp;
+package com.lyndir.lhunath.gorillas.web.app.page;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -26,6 +26,9 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.template.JavaScriptTemplate;
 import org.apache.wicket.util.template.TextTemplate;
+
+import com.lyndir.lhunath.gorillas.web.app.JavaScriptProvider;
+
 
 
 public class LayoutPage extends WebPage {

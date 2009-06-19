@@ -18,7 +18,7 @@
 
 		<init-param>
 			<param-name>applicationClassName</param-name>
-			<param-value>com.lyndir.lhunath.gorillas.webapp.GorillasWebApplication</param-value>
+			<param-value>com.lyndir.lhunath.gorillas.web.app.GorillasWebApplication</param-value>
 		</init-param>
 		<init-param>
 			<param-name>configuration</param-name>

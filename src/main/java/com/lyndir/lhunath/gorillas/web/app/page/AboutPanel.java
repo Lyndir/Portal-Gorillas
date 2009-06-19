@@ -13,7 +13,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.lyndir.lhunath.gorillas.webapp;
+package com.lyndir.lhunath.gorillas.web.app.page;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
@@ -46,6 +46,8 @@ public class AboutPanel extends Panel {
     public AboutPanel(String id) {
 
         super( id );
+
+        add( new Label( "version", GorillasVersion.getLatest().getShortVersion() ) );
 
         add( new ListView<GorillasVersion>( "versions", GorillasVersion.getAll() ) {
 

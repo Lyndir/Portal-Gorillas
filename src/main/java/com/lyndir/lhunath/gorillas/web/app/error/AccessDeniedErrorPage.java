@@ -13,14 +13,15 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.lyndir.lhunath.gorillas.webapp;
+package com.lyndir.lhunath.gorillas.web.app.error;
 
 import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.util.template.PackagedTextTemplate;
+
+import com.lyndir.lhunath.gorillas.web.app.page.MessagePage;
 
 
 /**
- * <h2>{@link OriginalPanel}<br>
+ * <h2>{@link AccessDeniedErrorPage}<br>
  * <sub>[in short] (TODO).</sub></h2>
  * 
  * <p>
@@ -28,27 +29,25 @@ import org.apache.wicket.util.template.PackagedTextTemplate;
  * </p>
  * 
  * <p>
- * <i>May 31, 2009</i>
+ * <i>Jun 10, 2009</i>
  * </p>
  * 
  * @author lhunath
  */
-public class OriginalPanel extends Panel implements JavaScriptProvider {
+public class AccessDeniedErrorPage extends MessagePage {
 
-    /**
-     * @param id
-     *            The Wicket ID of this panel.
-     */
-    public OriginalPanel(String id) {
+    @Override
+    protected Panel getDefaultPanel(String wicketId) {
+
+        return new AccessDeniedErrorPanel( wicketId );
+    }
+}
+
+
+class AccessDeniedErrorPanel extends Panel {
+
+    public AccessDeniedErrorPanel(String id) {
 
         super( id );
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public String getProvidedJavaScript() {
-
-        return new PackagedTextTemplate( getClass(), "showGame.js" ).asString();
     }
 }

@@ -1,4 +1,4 @@
-package com.lyndir.lhunath.gorillas.webapp;
+package com.lyndir.lhunath.gorillas.web.app;
 
 /*
  *   Copyright 2009, Maarten Billemont
@@ -20,9 +20,10 @@ import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.settings.IExceptionSettings;
 
-import com.lyndir.lhunath.gorillas.webapp.error.AccessDeniedErrorPage;
-import com.lyndir.lhunath.gorillas.webapp.error.InternalErrorPage;
-import com.lyndir.lhunath.gorillas.webapp.error.PageExpiredErrorPage;
+import com.lyndir.lhunath.gorillas.web.app.error.AccessDeniedErrorPage;
+import com.lyndir.lhunath.gorillas.web.app.error.InternalErrorPage;
+import com.lyndir.lhunath.gorillas.web.app.error.PageExpiredErrorPage;
+import com.lyndir.lhunath.gorillas.web.app.page.LayoutPage;
 
 
 /**

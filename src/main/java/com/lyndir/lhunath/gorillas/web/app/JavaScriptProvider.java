@@ -13,15 +13,10 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.lyndir.lhunath.gorillas.webapp.error;
-
-import org.apache.wicket.markup.html.panel.Panel;
-
-import com.lyndir.lhunath.gorillas.webapp.MessagePage;
-
+package com.lyndir.lhunath.gorillas.web.app;
 
 /**
- * <h2>{@link AccessDeniedErrorPage}<br>
+ * <h2>{@link JavaScriptProvider}<br>
  * <sub>[in short] (TODO).</sub></h2>
  * 
  * <p>
@@ -29,25 +24,12 @@ import com.lyndir.lhunath.gorillas.webapp.MessagePage;
  * </p>
  * 
  * <p>
- * <i>Jun 10, 2009</i>
+ * <i>Jun 11, 2009</i>
  * </p>
  * 
  * @author lhunath
  */
-public class AccessDeniedErrorPage extends MessagePage {
+public interface JavaScriptProvider {
 
-    @Override
-    protected Panel getDefaultPanel(String wicketId) {
-
-        return new AccessDeniedErrorPanel( wicketId );
-    }
-}
-
-
-class AccessDeniedErrorPanel extends Panel {
-
-    public AccessDeniedErrorPanel(String id) {
-
-        super( id );
-    }
+    public String getProvidedJavaScript();
 }

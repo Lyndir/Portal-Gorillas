@@ -28,11 +28,20 @@
             // Google Analytics
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-
+        </script><script type="text/javascript">
             // Shadowbox
             Shadowbox.init({
                 players:        ["img","flv"]
             });
+
+            // Google Analytics
+            try {
+                var pageTracker = _gat._getTracker("UA-90535-8");
+                pageTracker._setDomainName(".lhunath.com");
+                pageTracker._trackPageview();
+                var pageTracker = _gat._getTracker("UA-90535-5");
+                pageTracker._trackPageview();
+            } catch(err) {}
         </script>
     </head>
 
@@ -70,14 +79,6 @@
             <b>Gorillas</b> by
             <a class="b" href="http://www.lhunath.com">Maarten Billemont</a>.
         </div>
-
-        <!-- Track this page hit on GA -->
-        <script type="text/javascript">
-            try {
-                var pageTracker = _gat._getTracker("UA-90535-5");
-                pageTracker._trackPageview();
-            } catch(err) {}
-        </script>
     </body>
 
 </html>

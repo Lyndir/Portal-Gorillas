@@ -13,10 +13,13 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.lyndir.lhunath.gorillas.webapp;
+package com.lyndir.lhunath.gorillas.web.app.page;
+
+import org.apache.wicket.markup.html.panel.Panel;
+
 
 /**
- * <h2>{@link JavaScriptProvider}<br>
+ * <h2>{@link TracPage}<br>
  * <sub>[in short] (TODO).</sub></h2>
  * 
  * <p>
@@ -24,12 +27,38 @@ package com.lyndir.lhunath.gorillas.webapp;
  * </p>
  * 
  * <p>
- * <i>Jun 11, 2009</i>
+ * <i>May 31, 2009</i>
  * </p>
  * 
  * @author lhunath
  */
-public interface JavaScriptProvider {
+public class TracPage extends MessagePage {
 
-    public String getProvidedJavaScript();
+    @Override
+    protected Panel getDefaultPanel(String wicketId) {
+
+        return new TracPanel( wicketId );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected String getRedirectUrl() {
+
+        return "/trac";
+    }
+}
+
+
+class TracPanel extends Panel {
+
+    /**
+     * @param id
+     *            The Wicket ID of this panel.
+     */
+    public TracPanel(String id) {
+
+        super( id );
+    }
 }

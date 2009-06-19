@@ -13,7 +13,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.lyndir.lhunath.gorillas.webapp;
+package com.lyndir.lhunath.gorillas.web.app.page;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +25,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.util.template.PackagedTextTemplate;
 
 import com.lyndir.lhunath.gorillas.model.GorillasVersion;
+import com.lyndir.lhunath.gorillas.web.app.JavaScriptProvider;
 
 
 /**
