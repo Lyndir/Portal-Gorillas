@@ -23,6 +23,9 @@ import java.security.NoSuchAlgorithmException;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 
+import com.lyndir.lhunath.ipos.notifier.APNClient;
+import com.lyndir.lhunath.ipos.notifier.NotificationDevice;
+import com.lyndir.lhunath.ipos.notifier.NotificationPayLoad;
 import com.lyndir.lhunath.lib.system.logging.Logger;
 
 
