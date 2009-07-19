@@ -16,6 +16,9 @@
 package com.lyndir.lhunath.gorillas.web.app.page;
 
 import java.text.DateFormat;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -51,7 +54,10 @@ public class ArchivePanel extends Panel {
 
         super( id );
 
-        ListView<GorillasVersion> entries = new ListView<GorillasVersion>( "entries", GorillasVersion.getAll() ) {
+        List<GorillasVersion> versions = new LinkedList<GorillasVersion>( GorillasVersion.getAll() );
+        Collections.reverse( versions );
+
+        ListView<GorillasVersion> entries = new ListView<GorillasVersion>( "entries", versions ) {
 
             @Override
             protected void populateItem(ListItem<GorillasVersion> entryItem) {
@@ -129,10 +135,37 @@ public class ArchivePanel extends Panel {
                     protected void onComponentTag(ComponentTag tag) {
 
                         tag.put( "href", //
-                                 String.format( "http://gorillas.lyndir.com/trac/browser/?rev=%s", //
+                                 String.format( "http://github.com/lhunath/Gorillas/tree/%s", //
                                                 version.getFullVersion() ) );
 
                         super.onComponentTag( tag );
+                    }
+                } );
+
+                entryItem.add( new ListView<String>( "dependencies", new LinkedList<String>(
+                        version.getDependencies().keySet() ) ) {
+
+                    @Override
+                    protected void populateItem(ListItem<String> item) {
+
+                        final String dependencyName = item.getModelObject();
+                        final String dependencySnapshot = version.getDependencies().get( dependencyName );
+
+                        WebMarkupContainer linkComponent = new WebMarkupContainer( "link" ) {
+
+                            @Override
+                            protected void onComponentTag(ComponentTag tag) {
+
+                                tag.put( "href", //
+                                         String.format( "snapshots/%s", //
+                                                        dependencySnapshot ) );
+
+                                super.onComponentTag( tag );
+                            }
+                        };
+
+                        linkComponent.add( new Label( "name", dependencyName ) );
+                        item.add( linkComponent );
                     }
                 } );
             }

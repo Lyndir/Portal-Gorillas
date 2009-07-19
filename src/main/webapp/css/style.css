@@ -69,6 +69,9 @@ h1 sup, h2 sup, h3 sup {
 
     font-size:          12pt;
 }
+h5 {
+    border-bottom:      1px solid #999;
+}
 code {
     font-size:          inherit;
 }
@@ -252,20 +255,31 @@ code {
 
     width:              45%;
 }
-.entry .button {
+.entry ul.buttons {
+    margin:             0 0 0 7em;
+}
+.entry ul.buttons li {
+    display:            block;
+    float:              left;
+
+    padding:            0;
+    margin:             0 1em 1em;
+}
+.entry ul.buttons li a {
     display:            block;
 
     padding:            1ex;
-    margin:             2em auto 1em 7em;
-    width:              10ex;
+    margin:             0;
+    min-width:          12ex;
 
     background:         #CCC;
     border:             1px solid #999;
 
     text-align:         center;
     font-size:          larger;
+    white-space:        nowrap;
 }
-.entry .button:hover {
+.entry ul.buttons li a:hover {
     background:         #FFF;
 }
 .tip {

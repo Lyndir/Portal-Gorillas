@@ -30,7 +30,6 @@ import org.apache.wicket.util.template.TextTemplate;
 import com.lyndir.lhunath.gorillas.web.app.JavaScriptProvider;
 
 
-
 public class LayoutPage extends WebPage {
 
     private static final long   serialVersionUID  = 1L;
@@ -73,12 +72,12 @@ public class LayoutPage extends WebPage {
                 return new OriginalPanel( wicketId );
             }
         } );
-        headTabsList.add( new AbstractTab( new Model<String>( "Trac" ) ) {
+        headTabsList.add( new AbstractTab( new Model<String>( "Code" ) ) {
 
             @Override
             public Panel getPanel(String wicketId) {
 
-                throw new RestartResponseException( TracPage.class );
+                throw new RestartResponseException( DevelopmentPage.class );
             }
         } );
 
@@ -218,6 +217,26 @@ public class LayoutPage extends WebPage {
         // Page content.
         Panel contentPanel = getDefaultPanel( "contentPanel" );
         contentPanel.setOutputMarkupId( true );
+
+        // OnShowJavaScript
+        String js = null;
+        if (contentPanel instanceof JavaScriptProvider)
+            js = ((JavaScriptProvider) contentPanel).getProvidedJavaScript();
+        final String jsTemplate = js;
+        add( new StringHeaderContributor( new JavaScriptTemplate( new TextTemplate() {
+
+            @Override
+            public TextTemplate interpolate(Map<String, Object> variables) {
+
+                return this;
+            }
+
+            @Override
+            public String getString() {
+
+                return jsTemplate;
+            }
+        } ).asString() ) );
 
         add( pageTitle, headTabsContainer, contentPanel );
     }

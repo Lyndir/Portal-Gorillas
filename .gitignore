@@ -1,0 +1,8 @@
+.DS_Store
+*.jks
+*.key
+/.classpath
+/.project
+/.settings
+/eclipse
+/target
