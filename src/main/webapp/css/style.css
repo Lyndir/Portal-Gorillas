@@ -31,7 +31,7 @@ body {
 }
 a {
     color:              #333;
-    border-bottom:      1px dashed #333;
+    border-bottom:      1px dotted #333;
 
     text-decoration:    none;
 }
@@ -43,7 +43,7 @@ a:hover {
 }
 #about a {
     color:              #DDD;
-    border-bottom:      1px dashed #DDD;
+    border-bottom:      1px dotted #DDD;
 }
 #about a:hover {
     color:              #FFF;
@@ -133,7 +133,6 @@ code {
  */
 #head {
     position:           fixed;
-    overflow:           hidden;
     z-index:            90;
 
     top:                0;
@@ -163,9 +162,42 @@ code {
     }
     #head ul.tabs li a {
         display:        block;
+        position:       relative;
 
         height:         20px;
         padding:        5px 1em 0 1em;
+
+        background:         url("../images/layout/head.tile.bw.png");
+    }
+    #head ul.tabs li .hoveron {
+        display:        none;
+    }
+    #head ul.tabs li:hover .hoveron {
+        display:        block;
+    }
+    #head ul.tabs li:hover span.hoveron {
+        display:        inline;
+    }
+    #head ul.tabs li:hover .hoveroff {
+        display:        none;
+    }
+    #head ul.tabs li .hoveronhide {
+        visibility:     hidden;
+    }
+    #head ul.tabs li:hover .hoveronhide {
+        visibility:     visible;
+    }
+    #head ul.tabs li:hover .hoveroffhide {
+        visibility:     hidden;
+    }
+    #head ul.tabs li:hover .abs {
+        position:           absolute;
+    }
+    #head ul.tabs li:hover .abs.left {
+        left:              1em;
+    }
+    #head ul.tabs li:hover .abs.right {
+        right:              1em;
     }
     #head ul.tabs li.active a {
         font-weight:    bold;
@@ -265,7 +297,7 @@ code {
     padding:            0;
     margin:             0 1em 1em;
 }
-.entry ul.buttons li a {
+.entry ul.buttons li .button {
     display:            block;
 
     padding:            1ex;
@@ -279,7 +311,7 @@ code {
     font-size:          larger;
     white-space:        nowrap;
 }
-.entry ul.buttons li a:hover {
+.entry ul.buttons li .button:hover {
     background:         #FFF;
 }
 .tip {
@@ -313,6 +345,11 @@ object {
     background:         black;
     position:           relative;
     z-index:            79;
+}
+#previewinfo {
+    margin:             -1em auto 1ex;
+
+    font-size:          smaller;
 }
 #preview {
     position:           relative;

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:wicket="http://wicket.sourceforge.net/">
+
+    <body>
+        <wicket:panel>
+
+            <div id="about">
+                <p><b>Gorillas</b> - <span wicket:id="version"></span><br />
+                    by <a class="border" href="http://www.lhunath.com"
+                    onclick="pageTracker._trackPageview(this.href.replace(/^[a-z]+:\/\//i, '/external/'));">Lhunath</a></p>
+            </div>
+
+            <div id="previewinfo">Click the iPhone for a short gameplay video.<br />
+                <span class="small">(or use <a wicket:id="youtube" href="http://www.youtube.com/watch?v=[tba]"
+                                                onclick="pageTracker._trackPageview('/movie/youtube-[tba]');">YouTube</a>
+                                          / <a wicket:id="mpeg" href="movies/gorillas-[tba].mp4"
+                                                onclick="pageTracker._trackPageview('/movie/gorillas-[tba].mp4');">MPEG-4</a>)
+                </span>
+            </div>
+
+            <div id="preview">
+                <a wicket:id="iphone-youtube" class="iphone" href="http://www.youtube.com/watch?v=[tba]"
+                    onclick="pageTracker._trackPageview('/movie/youtube-[tba]');"></a>
+            </div>
+
+        </wicket:panel>
+    </body>
+
+</html>

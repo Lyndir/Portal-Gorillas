@@ -22,7 +22,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
@@ -47,7 +46,7 @@ public class GorillasVersion implements Serializable, Comparable<GorillasVersion
 
     private String                                          fullVersion;
     private String                                          shortVersion;
-    private Map<String, String>                             dependencies;
+    private List<String>                                    dependencies;
     private Date                                            completionDate;
     private String                                          youTubeID;
     private List<String>                                    changes;
@@ -68,8 +67,8 @@ public class GorillasVersion implements Serializable, Comparable<GorillasVersion
         versions.put( gorillasVersion.getFullVersion(), gorillasVersion );
     }
 
-    public GorillasVersion(String fullVersion, String shortVersion, Map<String, String> dependencies,
-            Date completionDate, String youTubeID, String... changes) {
+    public GorillasVersion(String fullVersion, String shortVersion, List<String> dependencies, Date completionDate,
+            String youTubeID, String... changes) {
 
         this.fullVersion = fullVersion;
         this.shortVersion = shortVersion;
@@ -161,7 +160,7 @@ public class GorillasVersion implements Serializable, Comparable<GorillasVersion
     /**
      * @return A map that maps the names of the external dependencies of this version to their snapshot archives.
      */
-    public Map<String, String> getDependencies() {
+    public List<String> getDependencies() {
 
         return dependencies;
     }

@@ -15,9 +15,8 @@
  */
 package com.lyndir.lhunath.gorillas.listener;
 
+import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -49,12 +48,8 @@ public class GorillasListener implements ServletContextListener {
      */
     public void contextInitialized(ServletContextEvent sce) {
 
-        Map<String, String> dependencies;
-
-        dependencies = new HashMap<String, String>();
-        dependencies.put( COCOS2D_IPHONE, "cocos2d-iphone-0.6.1-gorillas.tbz2" );
-        GorillasVersion.register( new GorillasVersion( "100", "1.0", dependencies, new Date( 1231931604L * 1000 ),
-                "Hu4Y8eJLqkI", "Eye candy worthy of your iPhone / iPod touch", //
+        GorillasVersion.register( new GorillasVersion( "100", "1.0", Collections.singletonList( COCOS2D_IPHONE ),
+                new Date( 1231931604L * 1000 ), "Hu4Y8eJLqkI", "Eye candy worthy of your iPhone / iPod touch", //
                 "Wind and weather effects, such as rain and snow", //
                 "A range of excellent retro remixes", //
                 "Challenge the AI or a friend", //
@@ -63,10 +58,8 @@ public class GorillasListener implements ServletContextListener {
                 "Fully Open Source" //
         ) );
 
-        dependencies = new HashMap<String, String>();
-        dependencies.put( COCOS2D_IPHONE, "cocos2d-iphone-0.7.0.661-gorillas.tbz2" );
-        GorillasVersion.register( new GorillasVersion( "110", "1.1", dependencies, new Date( 1236986395L * 1000 ),
-                "kOd6fI2Cm7c", "Sound effects, vibration and shaking", //
+        GorillasVersion.register( new GorillasVersion( "110", "1.1", Collections.singletonList( COCOS2D_IPHONE ),
+                new Date( 1236986395L * 1000 ), "kOd6fI2Cm7c", "Sound effects, vibration and shaking", //
                 "Game modes: Dynamic, Team Game & Last Man Standing", //
                 "Camera action and game field zooming", //
                 "Many gorillas together in the game", //
@@ -74,16 +67,12 @@ public class GorillasListener implements ServletContextListener {
                 "Kill shot replays" //
         ) );
 
-        dependencies = new HashMap<String, String>();
-        dependencies.put( COCOS2D_IPHONE, "cocos2d-iphone-0.7.0.661-gorillas.tbz2" );
-        GorillasVersion.register( new GorillasVersion( "122", "1.2", dependencies, new Date( 1240302082L * 1000 ),
-                "kOd6fI2Cm7c", "Holiday themed player models" //
+        GorillasVersion.register( new GorillasVersion( "122", "1.2", Collections.singletonList( COCOS2D_IPHONE ),
+                new Date( 1240302082L * 1000 ), "kOd6fI2Cm7c", "Holiday themed player models" //
         ) );
 
-        dependencies = new HashMap<String, String>();
-        dependencies.put( COCOS2D_IPHONE, "cocos2d-iphone-0.8.0.1081-gorillas.tbz2" );
-        GorillasVersion.register( new GorillasVersion( "130", "1.3", dependencies, new Date( 1247060791L * 1000 ),
-                "Q-s8bimr1GY", "Show metrics while aiming", //
+        GorillasVersion.register( new GorillasVersion( "130", "1.3", Collections.singletonList( COCOS2D_IPHONE ),
+                new Date( 1247060791L * 1000 ), "Q-s8bimr1GY", "Show metrics while aiming", //
                 "Added another player model", //
                 "Voice effects and new (higher quality) audio tracks", //
                 "Localized (currently English, Dutch and Arabic)", //

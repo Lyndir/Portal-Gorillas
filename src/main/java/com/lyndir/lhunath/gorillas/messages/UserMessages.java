@@ -19,7 +19,7 @@ import java.lang.reflect.Field;
 
 import org.apache.wicket.Component;
 
-import com.lyndir.lhunath.gorillas.web.app.GorillasWebApplication;
+import com.lyndir.lhunath.gorillas.webapp.GorillasWebApplication;
 import com.lyndir.lhunath.lib.system.localization.Localizer;
 import com.lyndir.lhunath.lib.system.localization.UseBundle;
 import com.lyndir.lhunath.lib.system.localization.UseKey;
