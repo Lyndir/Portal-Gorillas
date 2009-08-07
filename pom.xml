@@ -122,11 +122,6 @@
             <artifactId>system</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.lyndir.lhunath.ipos-notifier</groupId>
-            <artifactId>ipos-notifier</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
 
         <!-- EXTERNAL DEPENDENCIES -->
 		<dependency>
