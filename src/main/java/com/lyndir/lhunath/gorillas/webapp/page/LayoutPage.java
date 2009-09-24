@@ -58,14 +58,6 @@ public class LayoutPage extends WebPage {
                 return new AboutPanel( wicketId );
             }
         } );
-        headTabsList.add( new AbstractTab( new Model<String>( "Archives" ) ) {
-
-            @Override
-            public Panel getPanel(String wicketId) {
-
-                return new ArchivePanel( wicketId );
-            }
-        } );
         headTabsList.add( new AbstractTab( new Model<String>( "Original" ) ) {
 
             @Override
@@ -74,7 +66,15 @@ public class LayoutPage extends WebPage {
                 return new OriginalPanel( wicketId );
             }
         } );
-        headTabsList.add( new AbstractTab( new Model<String>( "Code" ) ) {
+        headTabsList.add( new AbstractTab( new Model<String>( "Archives" ) ) {
+
+            @Override
+            public Panel getPanel(String wicketId) {
+
+                return new ArchivePanel( wicketId );
+            }
+        } );
+        headTabsList.add( new AbstractTab( new Model<String>( "Development" ) ) {
 
             @Override
             public Panel getPanel(String wicketId) {

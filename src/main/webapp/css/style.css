@@ -127,6 +127,21 @@ code {
 .separator span {
     float:              right;
 }
+.note {
+    width:              auto;
+
+    margin:             2em 1em;
+    margin-left:        5em;
+    padding:            1em 2em 1em 3em;
+
+    border-left:        2px solid #999;
+}
+.note:hover {
+    border-color:       #DDD;
+}
+.note h3 {
+    margin:             0 0 0 -1em;
+}
 
 /*******************************************************************************
  * GLOBAL PROPERTIES *

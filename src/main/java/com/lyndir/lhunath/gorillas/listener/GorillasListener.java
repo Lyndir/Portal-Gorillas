@@ -71,7 +71,7 @@ public class GorillasListener implements ServletContextListener {
                 new Date( 1240302082L * 1000 ), "kOd6fI2Cm7c", "Holiday themed player models" //
         ) );
 
-        GorillasVersion.register( new GorillasVersion( "130", "1.3", Collections.singletonList( COCOS2D_IPHONE ),
+        GorillasVersion.register( new GorillasVersion( "131", "1.3", Collections.singletonList( COCOS2D_IPHONE ),
                 new Date( 1247060791L * 1000 ), "Q-s8bimr1GY", "Show metrics while aiming", //
                 "Added another player model", //
                 "Voice effects and new (higher quality) audio tracks", //
