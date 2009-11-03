@@ -66,7 +66,7 @@ public class LayoutPage extends WebPage {
                 return new OriginalPanel( wicketId );
             }
         } );
-        headTabsList.add( new AbstractTab( new Model<String>( "Archives" ) ) {
+        headTabsList.add( new AbstractTab( new Model<String>( "The Code" ) ) {
 
             @Override
             public Panel getPanel(String wicketId) {

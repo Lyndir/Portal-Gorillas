@@ -7,23 +7,34 @@
 
             <div id="about">
                 <p><b>Gorillas</b><br />
-                    The Archives</p>
+                    The Code</p>
             </div>
 
             <div class="text">
-                <p>Welcome to the Gorillas Archives.  Here you'll find an overview of the current and past Gorillas versions.</p>
+                <p>Welcome to the Gorillas Code Archive.  Here you'll find an overview of the current and past Gorillas versions.</p>
                 
                 <div class="note">
-                    <h3>Note</h3>
-                    <p>The Gorillas code uses a <i>slightly modified version</i> of the Cocos2D-iPhone code.  These modifications are mainly
-                    bug-fixes and the addition of slow-motion capability (as used when pausing the game or showing kill-shots).</p>
-                    <p>Due to this, you need to make sure to use both the Gorillas code at a certain version and my Cocos2D-iPhone snapshot
-                    from that same version for a quick and painless start.  So, either download the snapshots of a specific version or check
-                    a version tag out of GIT with <code>git checkout [gorillas-version]</code> in your Gorillas GIT repository and
-                    <code>git checkout gorillas-[gorillas-version]</code> in your Cocos2D-iPhone GIT repository.</p>
-                    <p>You are, of course, welcome to scour the rest of the code-base and branch for anything you like.  Should you have any
-                    further troubles, please first think them over a few more times, and
-                    <a href="http://www.lhunath.com/myst/?contact">contact me</a> if you can't dig your way out of it.</p>
+                    <h3>Note 1:</h3>
+                    <p>The <i>Gorillas</i> code uses a <i>slightly modified version</i> of the <i>Cocos2D-iPhone</i> code.
+                    These modifications are mainly bug-fixes and the addition of slow-motion capability (as used when pausing the game or
+                    showing kill-shots).</p>
+                    <p>For a painless start, pick a <i>Gorillas</i> version and use the snapshots of <i>Gorillas</i> and <i>Cocos2D-iPhone</i>
+                    of that version.  You can also check out the appropriate tag in my <i>Gorillas</i> and <i>Cocos2D-iPhone</i> GIT
+                    repositories after you clone them.  Using GIT means it'll be a lot easier for you to track future updates to the code.</p>
+
+                    <h3>Note 2:</h3>
+                    <p>I use the additional warning flag <code>-Wundeclared-selector</code> to make the compiler warn me when I use
+                    <code>@selector</code> references to methods that do not exist to avoid typos and be safer when refactoring.</p>
+                    <p>This warning flag, however, is only valid when using the <i>Objective C</i> compiler.  By default, it will cause
+                    problems with <code>.c</code> source files.  If you encounter this issue, find all <code>.c</code> files in the project
+                    (notably, <code>cocos2d-iphone</code>'s <code>base64.c</code> and <code>glu.c</code> in <code>cocos2d</code>'s
+                    <code>Support</code> group), press <b>Get Info</b> on them and in the <b>General</b> tab set <b>File Type</b> to
+                    <code>sourcecode.c.objc</code>.
+
+                    <h3>&nbsp;</h3>
+                    <p>You are, of course, welcome to scour the rest of the code-base and branch for anything you like.  However, take note of
+                    the <a href="http://stuff.lhunath.com/COPYING">LICENSE</a> that governs this code.  Should you have any further troubles, please first think them over a few more times,
+                    and <a href="http://www.lhunath.com/myst/?contact">contact me</a> if you can't dig your way out of it.</p>
                 </div>
             </div>
 
