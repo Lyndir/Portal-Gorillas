@@ -1,8 +1,26 @@
-.DS_Store
-*.jks
+# Secret stuff.
 *.key
+
+# Compiled objects.
+/target
+
+# OS-Specific junk.
+.DS_Store
+
+# Eclipse IDE
+/eclipse
 /.classpath
 /.project
 /.settings
-/eclipse
-/target
+/.refactorings
+
+# IntelliJ IDEA IDE
+/.idea
+*.iml
+
+# Netbeans IDE
+/build.xml
+/build
+/dist
+/manifest.mf
+/nbproject

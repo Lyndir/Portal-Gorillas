@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
 
     <!-- PROJECT METADATA -->
     <parent>
         <groupId>com.lyndir.lhunath</groupId>
         <artifactId>lyndir</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.3</version>
     </parent>
 
     <groupId>com.lyndir.lhunath.gorillas</groupId>
     <artifactId>gorillas-web</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>Gorillas: The Website</name>
-    <url>http://gorillas.lyndir.com</url>
+    <url>http://gorillas.lhunath.com</url>
     <inceptionYear>2009</inceptionYear>
     <description>
         The website of the Gorillas iPhone game.
@@ -30,35 +31,15 @@
     </organization>
 
 
-    <!-- DEVELOPERS -->
-    <developers>
-        <developer>
-            <id>lhunath</id>
-            <name>Maarten Billemont</name>
-            <email>lhunath@gmail.com</email>
-            <roles>
-                <role>development</role>
-            </roles>
-            <timezone>+1</timezone>
-            <properties>
-                <jabber>lhunath@gmail.com</jabber>
-                <msn>lhunath@lyndir.com</msn>
-                <msn>15559107</msn>
-                <private-email>lhunath@gmail.com</private-email>
-            </properties>
-        </developer>
-    </developers>
-
-
     <!-- CODE MANAGEMENT -->
     <scm>
-        <url>http://gorillas.lyndir.com</url>
-        <connection>${scm.git.pubbase}/Gorillas.git/Web</connection>
-        <developerConnection>${scm.git.devbase}/Gorillas.git/Web</developerConnection>
+        <url>${scm.github.webbase}/Gorillas-Web/tree</url>
+        <connection>${scm.github.pubbase}/Gorillas-Web.git</connection>
+        <developerConnection>${scm.github.devbase}/Gorillas-Web.git</developerConnection>
     </scm>
     <issueManagement>
-        <system>Trac</system>
-        <url>http://gorillas.lyndir.com/trac</url>
+        <system>Codaset</system>
+        <url>${scm.codaset.webbase}/Gorillas/tickets</url>
     </issueManagement>
 
 
@@ -66,91 +47,122 @@
     <properties>
     </properties>
 
-	<!-- BUILD CONFIGURATION -->
-	<build>
-		<resources>
-			<resource>
-				<filtering>false</filtering>
-				<directory>src/main/resources</directory>
+
+    <!-- BUILD CONFIGURATION -->
+    <build>
+        <resources>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/resources</directory>
                 <excludes>
                     <exclude>raw</exclude>
                 </excludes>
-			</resource>
-			<resource>
-				<filtering>false</filtering>
-				<directory>src/main/java</directory>
-				<includes>
-					<include>**</include>
-				</includes>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-		</resources>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
-					<webResources>
-						<resource>
-							<directory>${basedir}/src/main/webapp/WEB-INF</directory>
-							<targetPath>WEB-INF</targetPath>
-							<filtering>true</filtering>
-						</resource>
-					</webResources>
-				</configuration>
-			</plugin>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+                    <webResources>
+                        <resource>
+                            <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+                            <targetPath>WEB-INF</targetPath>
+                            <filtering>true</filtering>
+                        </resource>
+                    </webResources>
+                    <overlays>
+                        <overlay>
+                            <groupId>com.lyndir.lhunath.apps</groupId>
+                            <artifactId>apps-webapp</artifactId>
+                            <excludes>
+                                <exclude>WEB-INF/web.xml</exclude>
+                            </excludes>
+                        </overlay>
+                    </overlays>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>maven-jetty-plugin</artifactId>
                 <version>6.1.15</version>
                 <configuration>
+                    <contextPath>/</contextPath>
                     <scanIntervalSeconds>2</scanIntervalSeconds>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>logback.configurationFile</name>
+                            <value>${basedir}/target/classes/logback.xml</value>
+                        </systemProperty>
+                    </systemProperties>
                 </configuration>
             </plugin>
         </plugins>
-	</build>
+    </build>
 
-	<!-- DEPENDENCY MANAGEMENT -->
-	<dependencies>
+
+    <!-- DEPENDENCY MANAGEMENT -->
+    <dependencies>
 
         <!-- JLIBS -->
         <dependency>
             <groupId>com.lyndir.lhunath.jlibs</groupId>
             <artifactId>system</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>SNAPSHOT</version>
+        </dependency>
+
+        <!-- APPS -->
+        <dependency>
+            <groupId>com.lyndir.lhunath.apps</groupId>
+            <artifactId>apps-domain</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lyndir.lhunath.apps</groupId>
+            <artifactId>apps-webapp</artifactId>
+            <version>SNAPSHOT</version>
+            <type>war</type>
         </dependency>
 
         <!-- EXTERNAL DEPENDENCIES -->
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-ioc</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-ioc</artifactId>
+        </dependency>
         <dependency>
             <groupId>net.sf.json-lib</groupId>
-			<artifactId>json-lib</artifactId>
+            <artifactId>json-lib</artifactId>
             <classifier>jdk15</classifier>
             <version>2.2.3</version>
         </dependency>
-		<dependency>
-			<groupId>bouncycastle</groupId>
-			<artifactId>bcprov-jdk15</artifactId>
+        <dependency>
+            <groupId>bouncycastle</groupId>
+            <artifactId>bcprov-jdk15</artifactId>
             <version>140</version>
-		</dependency>
+        </dependency>
 
         <dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
             <version>2.4</version>
         </dependency>
         <dependency>
@@ -158,13 +170,13 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
             <scope>test</scope>
-		</dependency>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 
 </project>

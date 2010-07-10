@@ -24,25 +24,25 @@ import com.lyndir.lhunath.lib.system.logging.Logger;
 /**
  * <h2>{@link GorillasPlayer}<br>
  * <sub>[in short] (TODO).</sub></h2>
- * 
+ *
  * <p>
  * [description / usage].
  * </p>
- * 
+ *
  * <p>
  * <i>Jun 17, 2009</i>
  * </p>
- * 
+ *
  * @author lhunath
  */
 public class GorillasPlayer implements Comparable<GorillasPlayer> {
 
-    private static final Logger    logger = Logger.get( GorillasPlayer.class );
+    private static final Logger logger = Logger.get( GorillasPlayer.class );
 
-    private String                 udid;
-    private String                 name;
+    private String udid;
+    private String name;
 
-    private int                    topScore;
+    private int topScore;
     private HashMap<Date, Integer> scoreHistory;
 
 

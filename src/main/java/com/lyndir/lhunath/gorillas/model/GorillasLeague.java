@@ -24,22 +24,22 @@ import com.lyndir.lhunath.lib.system.logging.Logger;
 /**
  * <h2>{@link GorillasLeague}<br>
  * <sub>[in short] (TODO).</sub></h2>
- * 
+ *
  * <p>
  * [description / usage].
  * </p>
- * 
+ *
  * <p>
  * <i>Jun 17, 2009</i>
  * </p>
- * 
+ *
  * @author lhunath
  */
 public class GorillasLeague {
 
-    private static final Logger       logger = Logger.get( GorillasLeague.class );
+    private static final Logger logger = Logger.get( GorillasLeague.class );
 
-    private static GorillasLeague     instance;
+    private static GorillasLeague instance;
     private SortedSet<GorillasPlayer> players;
 
 

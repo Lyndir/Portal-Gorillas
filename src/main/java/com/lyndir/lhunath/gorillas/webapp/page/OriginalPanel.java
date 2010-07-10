@@ -15,31 +15,24 @@
  */
 package com.lyndir.lhunath.gorillas.webapp.page;
 
+import com.lyndir.lhunath.apps.webapp.JavaScriptProvider;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.util.template.PackagedTextTemplate;
 
-import com.lyndir.lhunath.gorillas.webapp.JavaScriptProvider;
-
 
 /**
- * <h2>{@link OriginalPanel}<br>
- * <sub>[in short] (TODO).</sub></h2>
- * 
- * <p>
- * [description / usage].
- * </p>
- * 
- * <p>
- * <i>May 31, 2009</i>
- * </p>
- * 
+ * <h2>{@link OriginalPanel}<br> <sub>[in short] (TODO).</sub></h2>
+ *
+ * <p> [description / usage]. </p>
+ *
+ * <p> <i>May 31, 2009</i> </p>
+ *
  * @author lhunath
  */
 public class OriginalPanel extends Panel implements JavaScriptProvider {
 
     /**
-     * @param id
-     *            The Wicket ID of this panel.
+     * @param id The Wicket ID of this panel.
      */
     public OriginalPanel(String id) {
 
