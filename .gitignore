@@ -1,18 +1,14 @@
-# Secret stuff.
-*.key
-
 # Compiled objects.
-/target
+target
 
 # OS-Specific junk.
 .DS_Store
 
 # Eclipse IDE
-/eclipse
-/.classpath
-/.project
-/.settings
-/.refactorings
+.classpath
+.project
+.settings
+.refactorings
 
 # IntelliJ IDEA IDE
 /.idea

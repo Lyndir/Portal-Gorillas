@@ -16,34 +16,20 @@ package com.lyndir.lhunath.gorillas.webapp;
  *   limitations under the License.
  */
 
-import com.lyndir.lhunath.apps.webapp.AppsSession;
-import com.lyndir.lhunath.apps.webapp.AppsWebApplication;
-import org.apache.wicket.Request;
-import org.apache.wicket.Response;
-import org.apache.wicket.Session;
+import com.lyndir.lhunath.portal.apps.webapp.AppsSession;
+import com.lyndir.lhunath.portal.apps.webapp.AppsWebApplication;
+import org.apache.wicket.*;
 import org.apache.wicket.protocol.http.WebApplication;
 
 
 /**
- * <h2>{@link GorillasWebApplication}<br>
- * <sub>Wicket {@link WebApplication} for the Gorillas iPhone game.</sub></h2>
+ * <h2>{@link GorillasWebApplication}<br> <sub>Wicket {@link WebApplication} for the Gorillas iPhone game.</sub></h2>
  *
- * <p>
- * <i>May 31, 2009</i>
- * </p>
+ * <p> <i>May 31, 2009</i> </p>
  *
  * @author lhunath
  */
 public class GorillasWebApplication extends AppsWebApplication {
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected void init() {
-
-        super.init();
-    }
 
     @Override
     public Session newSession(final Request request, final Response response) {
