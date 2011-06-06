@@ -17,11 +17,9 @@
     <packaging>war</packaging>
 
     <name>Lyndir Portal: Gorillas</name>
+    <description>The website of the Gorillas iPhone game.</description>
     <url>http://gorillas.lyndir.com</url>
     <inceptionYear>2009</inceptionYear>
-    <description>
-        The website of the Gorillas iPhone game.
-    </description>
 
 
     <!-- CODE MANAGEMENT -->
