@@ -44,7 +44,7 @@ public class GorillasGuiceContext extends PortalGuiceContext {
         super.contextInitialized( servletContextEvent );
 
         // Register our application and its versions.
-        App gorillas = new App( "lhunath", "Gorillas", "gorillas", new GitHubSourceProvider(), new YouTrackIssueTracker(), "UA-90535-5" );
+        App gorillas = new App( "Lyndir", "Gorillas", "gorillas", new GitHubSourceProvider(), new YouTrackIssueTracker(), "UA-90535-5" );
         gorillas.setIssueTrackerName( "GOR" );
         String description = "<p class='short'>Gorillas is a resurrection of the classic QBasic game shipped with MS-DOS 5.</p>" //
                              + "<p>Gorillas are at large on the metropolis rooftops.<br />" //
@@ -58,8 +58,8 @@ public class GorillasGuiceContext extends PortalGuiceContext {
                         null, description, //
                         ImmutableList.of( //
                                           new Dependency(
-                                                  "Cocos2d-iPhone", "http://github.com/Lyndir/Cocos2D-iPhone/tree/Gorillas-100",
-                                                  "http://github.com/Lyndir/Cocos2D-iPhone/tarball/Gorillas-100" ) ), //
+                                                  "Cocos2d-iPhone", "http://github.com/lhunath/Cocos2D-iPhone/tree/Gorillas-100",
+                                                  "http://github.com/lhunath/Cocos2D-iPhone/tarball/Gorillas-100" ) ), //
                         new Date( 1231931604L * 1000 ), "Hu4Y8eJLqkI", //
                         "Eye candy worthy of your iPhone / iPod touch", //
                         "Wind and weather effects, such as rain and snow", //
@@ -76,8 +76,8 @@ public class GorillasGuiceContext extends PortalGuiceContext {
                         null, description, //
                         ImmutableList.of( //
                                           new Dependency(
-                                                  "Cocos2d-iPhone", "http://github.com/Lyndir/Cocos2D-iPhone/tree/Gorillas-110",
-                                                  "http://github.com/Lyndir/Cocos2D-iPhone/tarball/Gorillas-110" ) ), //
+                                                  "Cocos2d-iPhone", "http://github.com/lhunath/Cocos2D-iPhone/tree/Gorillas-110",
+                                                  "http://github.com/lhunath/Cocos2D-iPhone/tarball/Gorillas-110" ) ), //
                         new Date( 1236986395L * 1000 ), "kOd6fI2Cm7c", //
                         "Sound effects, vibration and shaking", //
                         "Game modes: Dynamic, Team Game & Last Man Standing", //
@@ -93,8 +93,8 @@ public class GorillasGuiceContext extends PortalGuiceContext {
                         null, description, //
                         ImmutableList.of( //
                                           new Dependency(
-                                                  "Cocos2d-iPhone", "http://github.com/Lyndir/Cocos2D-iPhone/tree/Gorillas-122",
-                                                  "http://github.com/Lyndir/Cocos2D-iPhone/tarball/Gorillas-122" ) ), //
+                                                  "Cocos2d-iPhone", "http://github.com/lhunath/Cocos2D-iPhone/tree/Gorillas-122",
+                                                  "http://github.com/lhunath/Cocos2D-iPhone/tarball/Gorillas-122" ) ), //
                         new Date( 1240302082L * 1000 ), "kOd6fI2Cm7c", //
                         "Holiday themed player models" //
                 ) );
@@ -105,8 +105,8 @@ public class GorillasGuiceContext extends PortalGuiceContext {
                         null, description, //
                         ImmutableList.of( //
                                           new Dependency(
-                                                  "Cocos2d-iPhone", "http://github.com/Lyndir/Cocos2D-iPhone/tree/Gorillas-131",
-                                                  "http://github.com/Lyndir/Cocos2D-iPhone/tarball/Gorillas-131" ) ), //
+                                                  "Cocos2d-iPhone", "http://github.com/lhunath/Cocos2D-iPhone/tree/Gorillas-131",
+                                                  "http://github.com/lhunath/Cocos2D-iPhone/tarball/Gorillas-131" ) ), //
                         new Date( 1247060791L * 1000 ), "Q-s8bimr1GY", //
                         "Show metrics while aiming", //
                         "Added another player model", //
