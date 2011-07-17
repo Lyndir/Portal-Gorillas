@@ -44,7 +44,7 @@ public class GorillasGuiceContext extends PortalGuiceContext {
         super.contextInitialized( servletContextEvent );
 
         // Register our application and its versions.
-        App gorillas = new App( "Lhunath", "Gorillas", "gorillas", new GitHubSourceProvider(), new YouTrackIssueTracker(), "UA-90535-5" );
+        App gorillas = new App( "Lyndir", "Gorillas", "Gorillas", new GitHubSourceProvider(), new YouTrackIssueTracker(), "UA-90535-5" );
         gorillas.setIssueTrackerName( "GOR" );
         String description = "<p class='short'>Gorillas is a resurrection of the classic QBasic game shipped with MS-DOS 5.</p>" //
                              + "<p>Gorillas are at large on the metropolis rooftops.<br />" //
