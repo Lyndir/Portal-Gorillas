@@ -51,7 +51,7 @@ public class GorillasGuiceContext extends PortalGuiceContext {
                              + "They're fighting for control over the city by bombarding each other with explosive bananas.  " //
                              + "One touch on the screen determines the throw's aim and velocity and sends your projectile on "  //
                              + "its way to take out your enemy or the buildings that stand in your way.<br />" //
-                             + "<p>This release combines gorgeous iPhone/iPad/iPod touch features with pure melancholic gameplay.</p>";
+                             + "<p>This release combines gorgeous iOS features with pure melancholic gameplay.</p>";
         AppVersion.register(
                 new AppVersion(
                         gorillas, "100", "1.0", //
@@ -113,6 +113,32 @@ public class GorillasGuiceContext extends PortalGuiceContext {
                         "Voice effects and new (higher quality) audio tracks", //
                         "Localized (currently English, Dutch and Arabic)", //
                         "Auto-zoom when aiming at the very top of the screen" //
+                ) );
+
+        AppVersion.register(
+                new AppVersion(
+                        gorillas, "140", "1.4", //
+                        null, description, //
+                        ImmutableList.of( //
+                                          new Dependency(
+                                                  "Pearl", "https://github.com/Lyndir/Pearl/tree/gorillas-140",
+                                                  "https://github.com/Lyndir/Pearl/tarball/gorillas-140" ),
+                                          new Dependency( "cocos2d-iphone", "https://github.com/lhunath/cocos2d-iphone/tree/gorillas-140",
+                                                          "https://github.com/lhunath/cocos2d-iphone/tarball/gorillas-140" ),
+                                          new Dependency(
+                                                  "PlayHaven", "https://github.com/playhaven/sdk-ios/tree/1.0.2",
+                                                  "https://github.com/playhaven/sdk-ios/tarball/1.0.2" ),
+                                          new Dependency( "uicolor-utilities", "https://github.com/lhunath/uicolor-utilities/tree/30f7f7c",
+                                                          "https://github.com/lhunath/uicolor-utilities/tarball/30f7f7c" ),
+                                          new Dependency( "jrswizzle", "https://github.com/jonmarimba/jrswizzle/tree/98d18ae",
+                                                          "https://github.com/jonmarimba/jrswizzle/tarball/98d18ae" ),
+                                          new Dependency( "Localytics", "http://wiki.localytics.com/doku.php?id=ios4_integration",
+                                                          "http://files.localytics.com/ClientLibraries/iOS4/Localytics-iOS4-Client-latest.source.zip" )), //
+                        new Date( 1314689592L * 1000 ), "Q-s8bimr1GY", //
+                        "Networked multiplayer", //
+                        "Game Center support", //
+                        "Unified menu system", //
+                        "High-resolution artwork" //
                 ) );
     }
 

@@ -5,11 +5,6 @@
 
     <display-name>${project.name}</display-name>
 
-    <!-- Application Event Listeners -->
-    <listener>
-        <listener-class>com.lyndir.lhunath.gorillas.webapp.listener.GorillasGuiceContext</listener-class>
-    </listener>
-
     <!-- Application Filter Definitions And Mappings -->
     <filter>
         <filter-name>GuiceFilter</filter-name>
@@ -20,5 +15,10 @@
         <filter-name>GuiceFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!-- Application Event Listeners -->
+    <listener>
+        <listener-class>com.lyndir.lhunath.gorillas.webapp.listener.GorillasGuiceContext</listener-class>
+    </listener>
 
 </web-app>
